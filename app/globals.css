@@ -2066,3 +2066,13 @@ html[data-theme="light"] .services .icon-box:hover p {
 html[data-theme="light"] .services .icon-box:hover .icon::before {
   background: #35e888;
 }
+
+/*--------------------------------------------------------------
+# Full Width (2026-11-18) — section & hero melebar 90%.
+# Sudut tumpul dipertahankan: box terpusat dengan sisa 5% di
+# tiap sisi, radius 22px + border tetap utuh.
+--------------------------------------------------------------*/
+section .container,
+#header .container {
+  max-width: 90%;
+}

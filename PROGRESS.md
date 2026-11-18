@@ -106,6 +106,18 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
   dari cermin remote basis `f21f606` (prosedur baru):
   `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
   bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: Section & hero melebar 90% (permintaan Syamsul,
+  direvisi dua kali: "tetap sudut tumpul biar gak terlalu full",
+  lalu "mungkin 90%"): container section + hero max-width 90%,
+  radius 22px + border utuh.
+  Patch: `your_files/zerooneteknologi-fullwidth.patch`, basis = pasca tentang-visimisi.
+- 2026-11-18: Tentang dirombak (instruksi Syamsul): teks besar "Profil
+  PT Zero One Teknologi" dihapus dari judul section; Visi & Misi
+  DITULIS ULANG total (rasional, global, umum, menjual, relevan, full
+  Indonesia — bukan teks proposal lagi); sisa Inggris di Tentang
+  dibersihkan (Maintenance -> Pemeliharaan, label fokus: Perangkat
+  Lunak, IoT & Sensor, E-Dagang). Patch:
+  `your_files/zerooneteknologi-tentang-visimisi.patch`, basis = pasca layanan-hover.
 - 2026-11-18: Fix hover Layanan mode terang: kartu tetap putih saat
   hover (aturan dasar terang menang atas hover template) sementara
   teks berubah putih -> teks hilang. Ditambah aturan hover terang

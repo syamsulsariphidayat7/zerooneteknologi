@@ -6,12 +6,12 @@ import Testimonials from "./Testimonials";
 const INTERESTS = [
   { icon: "ri-community-line", color: "#ffbb2c", label: "Desa Digital", first: true },
   { icon: "ri-wifi-line", color: "#5578ff", label: "Jaringan Internet" },
-  { icon: "ri-code-s-slash-line", color: "#e80368", label: "Software House" },
+  { icon: "ri-code-s-slash-line", color: "#e80368", label: "Perangkat Lunak" },
   { icon: "ri-global-line", color: "#e361ff", label: "Website & Portal", lgFirst: true },
   { icon: "ri-smartphone-line", color: "#47aeff", label: "Aplikasi Mobile", spaced: true },
-  { icon: "ri-cpu-line", color: "#ffa76e", label: "Internet of Things", spaced: true },
+  { icon: "ri-cpu-line", color: "#ffa76e", label: "IoT & Sensor", spaced: true },
   { icon: "ri-video-line", color: "#11dbcf", label: "CCTV & Keamanan", spaced: true },
-  { icon: "ri-shopping-cart-2-line", color: "#4233ff", label: "E-Commerce", spaced: true },
+  { icon: "ri-shopping-cart-2-line", color: "#4233ff", label: "E-Dagang", spaced: true },
 ];
 
 export default function About() {
@@ -21,7 +21,6 @@ export default function About() {
       <div className="about-me container">
         <div className="section-title">
           <h2>Tentang</h2>
-          <p>Profil PT Zero One Teknologi</p>
         </div>
 
         <div className="row">
@@ -74,9 +73,9 @@ export default function About() {
             <h3 className="resume-title">Visi</h3>
             <div className="resume-item">
               <p>
-                Menjadi perusahaan software house, pengadaan jaringan internet, dan penyedia aplikasi nomor
-                satu di Indonesia dalam rangka mendukung program pemerintah untuk mewujudkan masyarakat yang maju dan
-                mandiri.
+                Menjadi mitra teknologi terpercaya bagi bisnis dan instansi untuk bertumbuh melalui
+                transformasi digital yang andal, aman, dan terjangkau — diakui di tingkat nasional
+                maupun global.
               </p>
             </div>
           </div>
@@ -84,11 +83,11 @@ export default function About() {
             <h3 className="resume-title">Misi</h3>
             <div className="resume-item">
               <ul>
-                <li>Membentuk Tim Strategi, Manajemen, dan Operasional yang solid.</li>
-                <li>Membuat brand Desa Digital berdaya guna sehingga bisa bersaing di kelas dunia.</li>
-                <li>Memberikan solusi dan kemudahan untuk mewujudkan tata kelola yang baik dan bersih dalam pelayanan publik.</li>
-                <li>Meningkatkan kemampuan Iptek dan inovasi sebagai pendamping kemajuan masyarakat sesuai perkembangan zaman.</li>
-                <li>Memberikan layanan internet untuk meningkatkan efektivitas dan efisiensi pelayanan publik.</li>
+                <li>Membangun perangkat lunak, aplikasi, dan website yang menyelesaikan masalah nyata klien — berkualitas, aman, dan dengan biaya yang rasional.</li>
+                <li>Menyediakan jaringan internet dan infrastruktur teknologi yang stabil untuk menunjang operasional bisnis, instansi, dan layanan publik.</li>
+                <li>Menghadirkan platform Desa Digital untuk membantu pemerintahan desa melayani masyarakat secara modern, cepat, dan transparan.</li>
+                <li>Mendampingi setiap klien dari konsultasi, perencanaan, penerapan, hingga pemeliharaan — semua dalam satu pintu.</li>
+                <li>Berinovasi mengikuti perkembangan teknologi global agar setiap solusi yang ditawarkan selalu relevan dan siap bersaing.</li>
               </ul>
             </div>
           </div>
@@ -187,7 +186,7 @@ export default function About() {
               </p>
             </div>
             <div className="resume-item">
-              <h4>4. Maintenance</h4>
+              <h4>4. Pemeliharaan</h4>
               <p>
                 Perawatan dan pembaruan berkala agar informasi tetap aktual — halaman dan aplikasi diawasi,
                 dikembangkan, dan diperbarui sesuai kebutuhan.

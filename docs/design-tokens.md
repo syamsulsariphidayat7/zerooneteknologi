@@ -40,6 +40,9 @@ Dimuat via `next/font/google` di `app/layout.tsx`, dirujuk lewat variabel CSS:
 
 ## Radius & Poles UI Modern (2026-11-18)
 
+- Full width (2026-11-18): section & hero melebar 90% — box terpusat
+  dengan sisa 5% di tiap sisi, sudut tumpul (radius 22px) + border
+  dipertahankan ("tetap sudut tumpul biar gak terlalu full").
 - Section `.container`: radius 22px, border 1px rgba(255,255,255,.07)
   (terang: rgba(0,0,0,.06)), bayangan 0 24px 60px rgba(0,0,0,.45).
 - Kartu (count-box, icon-box, info-box, portfolio-wrap): radius 16px;

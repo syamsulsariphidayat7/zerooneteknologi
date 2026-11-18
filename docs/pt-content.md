@@ -13,10 +13,13 @@ Halaman 10 PDF profil berupa gambar (tidak terbaca sebagai teks).
   dengan moto ditampilkan di bawahnya.
 - Tentang: perusahaan TI fokus pengembangan sistem informasi, internet, dan
   telekomunikasi untuk instansi, bisnis, dan masyarakat.
-- Visi & misi: dari proposal 2022, TAPI versi web DIPERSINGKAT atas instruksi
-  pemilik (2026-11-18, positioning global): kata "desa" di web hanya pada
-  produk Desa Digital — "Internet Desa" tampil sebagai "Jaringan Internet",
-  visi/misi versi web digeneralisasi (teks resmi dokumen PT tidak berubah).
+- Visi & misi: versi web DITULIS ULANG TOTAL atas instruksi pemilik
+  (2026-11-18): rasional, global, umum, menjual, relevan, full Indonesia —
+  BUKAN lagi teks proposal 2022 (teks resmi dokumen PT tetap apa adanya
+  sebagai arsip). Kata "desa" di web hanya pada produk Desa Digital;
+  "Internet Desa" tampil sebagai "Jaringan Internet". Judul besar
+  "Profil PT Zero One Teknologi" di section Tentang dihapus (2026-11-18);
+  langkah Cara Kerja ke-4 tampil "Pemeliharaan".
   Blok Visi & Misi ada di section Tentang (sejak 2026-11-18 section Profil
   DIGABUNG ke Tentang: urutan blok = intro/info, Visi & Misi (jangkar
   id="resume"), tombol PDF, counter, KBLI, Fokus Bidang, Cara Kerja; menu
@@ -29,7 +32,7 @@ Halaman 10 PDF profil berupa gambar (tidak terbaca sebagai teks).
 - Bidang usaha (KBLI, dari lampiran NIB): 58200, 62012, 63121, 62024, 61913,
   61924 — ditampilkan judul + kode saja.
 - Cara Kerja (dari proposal website 2024): Perencanaan → Pembuatan →
-  Implementasi → Maintenance.
+  Implementasi → Pemeliharaan (nama tampil web).
 - Tim: TIDAK ditampilkan di web (blok Tim Kami dihapus atas instruksi
   pemilik 2026-11-18). Kredit "Designed by BootstrapMade" juga dihapus total.
 - Kontak: alamat NIB — Kp. Cibojong RT 004 RW 005, Balewangi, Cisurupan,
