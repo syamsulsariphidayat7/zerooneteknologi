@@ -1,13 +1,15 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 /**
  * Pengganti forms/contact.php (PHP Email Form, versi Pro tidak disertakan
  * di template gratis). Handler ini memvalidasi field yang sama seperti
  * form aslinya dan mengembalikan JSON.
  *
- * CATATAN: belum mengirim email sungguhan — sambungkan provider email
- * (mis. Resend / Nodemailer + SMTP) di titik yang ditandai di bawah,
- * dan ganti alamat penerima lewat env CONTACT_TO_EMAIL.
+ * Pengiriman email (ADR 0005): bila env SMTP_USER + SMTP_PASS terisi,
+ * pesan dikirim sungguhan via SMTP (default Gmail) ke CONTACT_TO_EMAIL.
+ * Bila env belum terisi (dev lokal / test), pesan hanya dicatat di log
+ * server — alur UI tetap sama.
  */
 // Rate limiting sederhana in-memory: maks 5 request / 60 detik per IP.
 // Cukup untuk form kontak single-instance; untuk deployment multi-instance
@@ -25,6 +27,38 @@ function isRateLimited(ip: string): boolean {
   }
   entry.count += 1;
   return entry.count > RATE_LIMIT;
+}
+
+type ContactMessage = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+/** Kirim email via SMTP. Melempar error bila SMTP menolak/gagal. */
+async function sendContactEmail(to: string, msg: ContactMessage) {
+  const user = process.env.SMTP_USER as string;
+  const port = Number(process.env.SMTP_PORT || 465);
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || "smtp.gmail.com",
+    port,
+    secure: port === 465,
+    auth: { user, pass: process.env.SMTP_PASS as string },
+  });
+  await transporter.sendMail({
+    from: `"Website PT Zero One Teknologi" <${user}>`,
+    to,
+    replyTo: msg.email,
+    subject: `[Website] ${msg.subject}`,
+    text: [
+      `Nama: ${msg.name}`,
+      `Email: ${msg.email}`,
+      `Subjek: ${msg.subject}`,
+      "",
+      msg.message,
+    ].join("\n"),
+  });
 }
 
 export async function POST(request: Request) {
@@ -59,12 +93,29 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
   }
 
-  const to = process.env.CONTACT_TO_EMAIL || "contact@example.com";
+  const to =
+    process.env.CONTACT_TO_EMAIL || process.env.SMTP_USER || "zeroone212117@gmail.com";
 
-  // TODO: kirim email di sini (Resend / Nodemailer / SMTP).
-  // Untuk sekarang pesan dicatat di log server agar alur UI tetap sama
-  // seperti template asli (sent-message tampil setelah submit sukses).
-  console.log("[contact] New message", { to, name, email, subject, message });
+  if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+    try {
+      await sendContactEmail(to, { name, email, subject, message });
+    } catch (err) {
+      console.error("[contact] SMTP gagal:", err);
+      return NextResponse.json(
+        { error: "Failed to send email. Please try again later." },
+        { status: 500 }
+      );
+    }
+  } else {
+    // Env SMTP belum diisi: mode log (dev lokal / test otomatis).
+    console.log("[contact] New message (mode log, SMTP belum diatur)", {
+      to,
+      name,
+      email,
+      subject,
+      message,
+    });
+  }
 
   return NextResponse.json({ ok: true });
 }

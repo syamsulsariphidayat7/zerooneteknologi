@@ -106,6 +106,33 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
   dari cermin remote basis `f21f606` (prosedur baru):
   `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
   bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: ROMBAK NAV ATAS + HAPUS GARIS POJOK (instruksi Syamsul):
+  (1) Dua garis hijau di pojok section Kontak DIHAPUS — itu lapisan
+  garis aksen pola Kontak yang lolos sapuan karena ditulis sebagai
+  rgba(53,232,136) (bentuk RGB #35E888); sekalian glow Kontak mode
+  terang + titik Portfolio dibirukan (sisa RGB hijau-dominan: nol).
+  (2) Kemunculan nav DIROMBAK (ADR 0006): pola hero-menyusut +
+  spacer dibuang total; diganti komponen TopBar terpisah (bar kaca
+  60px, transition luncur) — hero statis, nol pergeseran layout,
+  nol lompatan. State tema diangkat ke lib/theme.tsx, scrollspy ke
+  lib/useActiveSection.ts. Patch:
+  `your_files/zerooneteknologi-topbar.patch`, basis = `c2c139b`
+  (+ commit fix-email bila sudah ter-push lebih dulu).
+- 2026-11-18: TIGA perbaikan dari uji Syamsul di HP:
+  (1) Sisa aksen hijau yang lolos sapuan pertama dibersihkan:
+  #15BB62 (hover tombol Kirim Pesan + Unduh PDF), #4CEB95 (garis
+  judul section), #63EDA3 (hover tautan portfolio) -> #75C6DD;
+  gradien lingkaran inisial testimoni -> ungu logo #97529B;
+  latar ikon hitungan mode terang #E8F9F0 -> #EAF6FA.
+  (2) BUG nav mobile "pindah ke atas": animasi headerTopIn memakai
+  transform pada #header sehingga elemen position:fixed di dalamnya
+  (nav bawah mobile + tombol melayang) bergeser relatif ke header.
+  Animasi diganti fade opacity saja, 0,25 dtk — halus, tanpa loncat,
+  tanpa efek samping.
+  (3) EMAIL FORM KONTAK DIAKTIFKAN (ADR 0005): Nodemailer + SMTP
+  Gmail (App Password via env Vercel SMTP_USER/SMTP_PASS); tanpa env
+  = mode log. Patch: `your_files/zerooneteknologi-fix-email.patch`,
+  basis = `c2c139b`.
 - 2026-11-18: Kemunculan bar nav dibuat halus: header-top kini
   meluncur turun + memudar masuk (animasi headerTopIn 0,35 dtk)
   saat scroll memasuki section Tentang, bukan muncul seketika;

@@ -197,6 +197,7 @@ const id = {
       "Invalid request body.": "Isi formulir tidak valid.",
       "Name, email, subject and message are required.": "Nama, email, subjek, dan pesan wajib diisi.",
       "Invalid email address.": "Alamat email tidak valid.",
+      "Failed to send email. Please try again later.": "Gagal mengirim pesan. Silakan coba lagi nanti.",
     } as Record<string, string>,
   },
   details: {

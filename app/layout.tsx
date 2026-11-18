@@ -12,6 +12,8 @@ import "remixicon/fonts/remixicon.css";
 // Template main CSS (assets/css/style.css asli, path bg.jpg disesuaikan)
 import "./globals.css";
 import { LangProvider } from "@/lib/i18n";
+import { ThemeProvider } from "@/lib/theme";
+import TopBar from "@/components/TopBar";
 
 // Google Fonts via next/font: font di-self-host saat build (tanpa request
 // ke fonts.googleapis.com saat runtime, tanpa layout shift).
@@ -104,7 +106,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
         />
-        <LangProvider>{children}</LangProvider>
+        <LangProvider>
+          <ThemeProvider>
+            <TopBar />
+            {children}
+          </ThemeProvider>
+        </LangProvider>
       </body>
     </html>
   );

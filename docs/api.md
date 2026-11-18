@@ -42,3 +42,11 @@ Pesan yang valid **belum dikirim sebagai email**: handler memvalidasi lalu menca
 ke log server (`[contact] New message`). Alamat tujuan diambil dari env
 `CONTACT_TO_EMAIL` (default `contact@example.com`, sama seperti template asli).
 Titik sambung provider email ditandai `TODO` di file route.
+
+## Pengiriman email form kontak
+
+`POST /api/contact` mengirim email sungguhan bila env `SMTP_USER` dan
+`SMTP_PASS` terisi (SMTP, default Gmail — lihat ADR 0005 dan
+`.env.example`). Tujuan: `CONTACT_TO_EMAIL`. Bila env kosong, pesan
+hanya dicatat di log server. Kegagalan SMTP membalas
+`500 { "error": "Failed to send email. Please try again later." }`.
