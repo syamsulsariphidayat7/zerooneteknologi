@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import PortfolioDetailsContent from "@/components/PortfolioDetailsContent";
-import Credits from "@/components/Credits";
 
 export const metadata: Metadata = {
-  title: "Portfolio Details - Personal Bootstrap Template",
+  title: "Detail Portfolio — PT Zero One Teknologi",
 };
 
 export default function PortfolioDetailsPage() {
   return (
     <>
       <PortfolioDetailsContent />
-      <Credits />
     </>
   );
 }

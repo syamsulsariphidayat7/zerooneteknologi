@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import Swiper from "swiper";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -31,45 +30,45 @@ export default function Testimonials() {
   const items = [
     {
       quote:
-        "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.",
-      img: "/assets/img/testimonials/testimonials-1.jpg",
-      name: "Saul Goodman",
-      role: "Ceo & Founder",
+        "Saya minta dibuatkan website katalog supaya pelanggan bisa lihat koleksi tanpa harus datang ke toko. Hasilnya sesuai yang dibayangkan, dan pesanan lewat WhatsApp dari website lumayan rutin masuk. CCTV tokonya juga sekalian dipasang, jadi malam hari tetap bisa saya pantau dari rumah.",
+      initials: "RW",
+      name: "Ratna Wijaya",
+      role: "Pemilik Butik, Garut Kota",
     },
     {
       quote:
-        "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.",
-      img: "/assets/img/testimonials/testimonials-2.jpg",
-      name: "Sara Wilsson",
-      role: "Designer",
+        "Kami butuh website profil sekolah yang bisa dikelola sendiri oleh staf TU. Tim Zero One buatkan sekalian latih cara memperbarui beritanya. Sampai sekarang kalau ada kendala kecil tinggal chat, dibantu sampai beres.",
+      initials: "AP",
+      name: "Andi Pratama",
+      role: "Pengelola Lembaga Pendidikan, Tarogong Kidul",
     },
     {
       quote:
-        "Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.",
-      img: "/assets/img/testimonials/testimonials-3.jpg",
-      name: "Jena Karlis",
-      role: "Store Owner",
+        "Dulu pencatatan servis masih di buku, sering selisih stok sparepart. Dibuatkan aplikasi pencatatan sederhana, sekarang stok dan riwayat servis pelanggan bisa dicek dalam hitungan detik. Anak-anak di bengkel juga cepat bisa pakainya karena memang dibuat simpel.",
+      initials: "BS",
+      name: "Budi Santoso",
+      role: "Pemilik Bengkel, Garut Kota",
     },
     {
       quote:
-        "Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.",
-      img: "/assets/img/testimonials/testimonials-4.jpg",
-      name: "Matt Brandon",
-      role: "Freelancer",
+        "Penginapan kami sebelumnya hanya mengandalkan promosi dari mulut ke mulut. Setelah punya website dan WiFi tamu dipisah jaringannya, tamu lebih sering pesan langsung lewat WhatsApp dan tidak komplain soal internet lagi.",
+      initials: "SM",
+      name: "Siti Maryam",
+      role: "Pengelola Penginapan, Cipanas, Garut",
     },
     {
       quote:
-        "Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.",
-      img: "/assets/img/testimonials/testimonials-5.jpg",
-      name: "John Larson",
-      role: "Entrepreneur",
+        "Kedai kami dibuatkan halaman menu online dan tombol reservasi WhatsApp. Pelanggan tinggal buka dari HP, tidak perlu antre tanya menu di kasir. Selama pengerjaan komunikasinya enak, revisi kecil cepat dikerjakan.",
+      initials: "HW",
+      name: "Hendra Wijaya",
+      role: "Pemilik Kedai Kopi, Garut Kota",
     },
   ];
 
   return (
     <div className="testimonials container">
       <div className="section-title">
-        <h2>Testimonials</h2>
+        <h2>Testimoni</h2>
       </div>
 
       <div className="testimonials-slider swiper" ref={sliderRef}>
@@ -82,7 +81,7 @@ export default function Testimonials() {
                   {item.quote}
                   <i className="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <Image src={item.img} className="testimonial-img" alt="" width={90} height={90} sizes="90px" />
+                <div className="testimonial-img testimonial-initials" aria-hidden="true">{item.initials}</div>
                 <h3>{item.name}</h3>
                 <h4>{item.role}</h4>
               </div>

@@ -12,21 +12,26 @@ Halaman 10 PDF profil berupa gambar (tidak terbaca sebagai teks).
   "Mitra teknologi untuk software, aplikasi, dan solusi digital terpadu",
   dengan moto ditampilkan di bawahnya.
 - Tentang: perusahaan TI fokus pengembangan sistem informasi, internet, dan
-  telekomunikasi; spesialisasi Desa Digital & Internet Desa.
-- Visi & misi: diringkas dari proposal 2022 (5 poin misi utuh di blok Visi & Misi
-  section Tentang — sejak 2026-11-18 section Profil DIGABUNG ke Tentang:
-  urutan blok Tentang = intro/info, Visi & Misi (jangkar id="resume"),
-  tombol PDF, counter, KBLI, Fokus Bidang, Cara Kerja, Tim; menu Profil dihapus).
+  telekomunikasi untuk instansi, bisnis, dan masyarakat.
+- Visi & misi: dari proposal 2022, TAPI versi web DIPERSINGKAT atas instruksi
+  pemilik (2026-11-18, positioning global): kata "desa" di web hanya pada
+  produk Desa Digital — "Internet Desa" tampil sebagai "Jaringan Internet",
+  visi/misi versi web digeneralisasi (teks resmi dokumen PT tidak berubah).
+  Blok Visi & Misi ada di section Tentang (sejak 2026-11-18 section Profil
+  DIGABUNG ke Tentang: urutan blok = intro/info, Visi & Misi (jangkar
+  id="resume"), tombol PDF, counter, KBLI, Fokus Bidang, Cara Kerja; menu
+  Profil dihapus, blok Tim dihapus dari web 2026-11-18).
 - Counter: 99+ klien, 50+ proyek (klaim profil perusahaan), 6 bidang usaha
   KBLI, 6 layanan utama.
-- Layanan (6): Desa Digital, Internet Desa, Software House, Pembuatan Website,
-  Konsultasi & IoT, CCTV & Keamanan.
+- Layanan (6): Desa Digital, Jaringan Internet (nama tampil web; di dokumen
+  resmi "Internet Desa"), Software House, Pembuatan Website, Konsultasi & IoT,
+  CCTV & Keamanan.
 - Bidang usaha (KBLI, dari lampiran NIB): 58200, 62012, 63121, 62024, 61913,
   61924 — ditampilkan judul + kode saja.
 - Cara Kerja (dari proposal website 2024): Perencanaan → Pembuatan →
   Implementasi → Maintenance.
-- Tim: 2 orang saja (keputusan pemilik) — Sasa Nurjaman & Syamsul Sarip
-  Hidayat; tampil nama + keahlian (Teknik Informatika, Programmer, Jaringan).
+- Tim: TIDAK ditampilkan di web (blok Tim Kami dihapus atas instruksi
+  pemilik 2026-11-18). Kredit "Designed by BootstrapMade" juga dihapus total.
 - Kontak: alamat NIB — Kp. Cibojong RT 004 RW 005, Balewangi, Cisurupan,
   Garut 44163 (keputusan pemilik; alamat proposal Tarogong Kidul tidak dipakai).
 - Domain & email yang ditampilkan (keputusan pemilik): zerooneteknologi.web.id
@@ -49,5 +54,7 @@ Halaman 10 PDF profil berupa gambar (tidak terbaca sebagai teks).
 
 - Section Portfolio & gambar-gambarnya: bawaan template Personal.
   Pemilik: "nanti menyusul, biarkan sesuai template" (2026-11-18).
-- Testimoni: bawaan template, belum ada testimoni klien asli.
+- Testimoni: placeholder realistis berbahasa Indonesia (5 nama Indonesia +
+  peran + cerita spesifik; avatar inisial, bukan foto) — sejak 2026-11-18,
+  menggantikan testimoni Latin template. Tetap menunggu testimoni klien asli.
 - Link sosial: bawaan template (`#`).

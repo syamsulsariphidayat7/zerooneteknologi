@@ -9,21 +9,21 @@ import "glightbox/dist/css/glightbox.min.css";
 // dinamis di useEffect (client-only), bukan import statis.
 
 const FILTERS = [
-  { filter: "*", label: "All" },
-  { filter: ".filter-app", label: "App" },
-  { filter: ".filter-card", label: "Card" },
+  { filter: "*", label: "Semua" },
+  { filter: ".filter-app", label: "Aplikasi" },
+  { filter: ".filter-card", label: "Kartu" },
   { filter: ".filter-web", label: "Web" },
 ];
 
 const ITEMS = [
-  { img: 1, title: "App 1", category: "App", filterClass: "filter-app" },
-  { img: 2, title: "Web 3", category: "Web", filterClass: "filter-web" },
-  { img: 3, title: "App 2", category: "App", filterClass: "filter-app" },
-  { img: 4, title: "Card 2", category: "Card", filterClass: "filter-card" },
+  { img: 1, title: "Aplikasi 1", category: "Aplikasi", filterClass: "filter-app" },
+  { img: 2, title: "Web 1", category: "Web", filterClass: "filter-web" },
+  { img: 3, title: "Aplikasi 2", category: "Aplikasi", filterClass: "filter-app" },
+  { img: 4, title: "Kartu 2", category: "Kartu", filterClass: "filter-card" },
   { img: 5, title: "Web 2", category: "Web", filterClass: "filter-web" },
-  { img: 6, title: "App 3", category: "App", filterClass: "filter-app" },
-  { img: 7, title: "Card 1", category: "Card", filterClass: "filter-card" },
-  { img: 8, title: "Card 3", category: "Card", filterClass: "filter-card" },
+  { img: 6, title: "Aplikasi 3", category: "Aplikasi", filterClass: "filter-app" },
+  { img: 7, title: "Kartu 1", category: "Kartu", filterClass: "filter-card" },
+  { img: 8, title: "Kartu 3", category: "Kartu", filterClass: "filter-card" },
   { img: 9, title: "Web 3", category: "Web", filterClass: "filter-web" },
 ];
 

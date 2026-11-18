@@ -30,7 +30,31 @@ export default function RevealOnScroll() {
       s.classList.add("reveal");
       io.observe(s);
     });
-    return () => io.disconnect();
+
+    // Sentuhan animasi: kartu-kartu di dalam section muncul berjenjang.
+    const items = document.querySelectorAll<HTMLElement>(
+      "section .icon-box, section .count-box, section .portfolio-item, section .info-box"
+    );
+    const io2 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("rv-in");
+            io2.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    items.forEach((el, i) => {
+      el.classList.add("rv");
+      el.style.transitionDelay = `${(i % 4) * 70}ms`;
+      io2.observe(el);
+    });
+    return () => {
+      io.disconnect();
+      io2.disconnect();
+    };
   }, []);
 
   return null;

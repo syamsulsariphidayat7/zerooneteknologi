@@ -41,13 +41,13 @@ const poppins = Poppins({
 
 const SITE_URL = "https://zerooneteknologi.web.id";
 const SITE_DESC =
-  "PT Zero One Teknologi: Desa Digital, Internet Desa, Software House, Pembuatan Website, CCTV & IoT. Cisurupan, Garut, Jawa Barat.";
+  "PT Zero One Teknologi: Software House, Pembuatan Website & Aplikasi, Jaringan Internet, CCTV & IoT. Cisurupan, Garut, Jawa Barat.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "PT Zero One Teknologi — don't limit yourself",
   description: SITE_DESC,
-  keywords: "PT Zero One Teknologi, Desa Digital, Internet Desa, Software House Garut, Pembuatan Website, CCTV, IoT",
+  keywords: "PT Zero One Teknologi, Software House Garut, Pembuatan Website, Aplikasi Web, Jaringan Internet, CCTV, IoT",
   openGraph: {
     type: "website",
     locale: "id_ID",

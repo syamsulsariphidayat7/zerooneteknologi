@@ -29,7 +29,7 @@ export default function PortfolioDetailsContent() {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              <h2 className="portfolio-title">This is an example of portfolio detail</h2>
+              <h2 className="portfolio-title">Aplikasi Stok & Penjualan Distributor</h2>
 
               <div className="portfolio-details-slider swiper" ref={sliderRef}>
                 <div className="swiper-wrapper align-items-center">
@@ -51,16 +51,16 @@ export default function PortfolioDetailsContent() {
             </div>
 
             <div className="col-lg-4 portfolio-info">
-              <h3>Project information</h3>
+              <h3>Informasi Proyek</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Kategori</strong>: Aplikasi Web</li>
+                <li><strong>Klien</strong>: Perusahaan Distributor, Garut</li>
+                <li><strong>Tanggal Proyek</strong>: 8 September 2026</li>
+                <li><strong>URL Proyek</strong>: <a href="#">app.contoh.id</a></li>
               </ul>
 
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                Aplikasi web untuk pencatatan stok dan penjualan distributor: barang masuk dan keluar tercatat secara real-time, nota penjualan tercetak otomatis, dan laporan harian dapat dipantau pemilik dari mana saja. Tampilannya dirancang sederhana agar staf gudang dan admin cepat beradaptasi tanpa pelatihan panjang.
               </p>
             </div>
           </div>

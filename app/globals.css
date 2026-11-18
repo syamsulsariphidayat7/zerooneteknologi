@@ -64,7 +64,7 @@ h6 {
   display: flex;
   align-items: center;
   z-index: 997;
-  overflow-y: auto;
+  overflow-y: visible;
 }
 
 #header * {
@@ -1737,44 +1737,9 @@ section.reveal.is-visible {
 }
 
 /*--------------------------------------------------------------
-# Poles UI Modern — Sudut Tumpul, Scrollbar Kustom, Kaca
+# Poles UI Modern — Sudut Tumpul, Kaca (scrollbar kustom dicabut 2026-11-18)
 # Radius: section 22px, kartu 16px, input 12px, tombol pil.
 --------------------------------------------------------------*/
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #18d26e #070807;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #070807;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #18d26e, #0e9f5d);
-  border-radius: 8px;
-  border: 2px solid #070807;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #18d26e;
-}
-
-html[data-theme="light"] {
-  scrollbar-color: #18d26e #e8ebee;
-}
-
-html[data-theme="light"] ::-webkit-scrollbar-track {
-  background: #e8ebee;
-}
-
-html[data-theme="light"] ::-webkit-scrollbar-thumb {
-  border-color: #e8ebee;
-}
-
 section .container {
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -1905,4 +1870,199 @@ html[data-theme="light"] .back-to-top {
     width: 42px;
     height: 42px;
   }
+}
+
+/*--------------------------------------------------------------
+# Pola per Section (2026-11-18) — Blueprint & Kontur dihapus dari
+# kandidat; empat pola lain dipasang satu per section:
+# Tentang=Circuit, Layanan=Jaringan, Portfolio=Dot Grid,
+# Kontak=Glow + Aksen Garis. Pola menempel di kotak .container.
+--------------------------------------------------------------*/
+section#about .container {
+  background-image: url("/assets/img/pattern-circuit.svg");
+  background-size: 220px 220px;
+}
+
+section#services .container {
+  background-image: url("/assets/img/pattern-mesh.svg");
+  background-size: 880px auto;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+section#portfolio .container {
+  background-image: radial-gradient(rgba(190, 255, 220, 0.13) 1.2px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+
+section#contact .container {
+  background-image:
+    radial-gradient(480px 300px at 10% -6%, rgba(24, 210, 110, 0.12), transparent 70%),
+    radial-gradient(420px 280px at 96% 108%, rgba(24, 210, 110, 0.08), transparent 70%),
+    linear-gradient(rgba(53, 232, 136, 0.75), rgba(53, 232, 136, 0.75)),
+    linear-gradient(rgba(53, 232, 136, 0.75), rgba(53, 232, 136, 0.75));
+  background-size: auto, auto, 5px 62px, 5px 46px;
+  background-position: 0 0, 0 0, right 24px top 34px, left 24px bottom 34px;
+  background-repeat: no-repeat;
+}
+
+html[data-theme="light"] section#about .container {
+  background-image: url("/assets/img/pattern-circuit-light.svg");
+}
+
+html[data-theme="light"] section#services .container {
+  background-image: url("/assets/img/pattern-mesh-light.svg");
+}
+
+html[data-theme="light"] section#portfolio .container {
+  background-image: radial-gradient(rgba(11, 120, 70, 0.14) 1.2px, transparent 1.6px);
+}
+
+html[data-theme="light"] section#contact .container {
+  background-image:
+    radial-gradient(480px 300px at 10% -6%, rgba(24, 180, 100, 0.10), transparent 70%),
+    radial-gradient(420px 280px at 96% 108%, rgba(24, 180, 100, 0.07), transparent 70%),
+    linear-gradient(rgba(14, 159, 93, 0.55), rgba(14, 159, 93, 0.55)),
+    linear-gradient(rgba(14, 159, 93, 0.55), rgba(14, 159, 93, 0.55));
+}
+
+/*--------------------------------------------------------------
+# Gradien Hero (2026-11-18, instruksi Syamsul) — lapisan di atas
+# foto background khusus area hero: tint hijau halus di atas,
+# memudar di tengah, dasar digelapkan agar teks hero kontras.
+--------------------------------------------------------------*/
+#header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(24, 210, 110, 0.10) 0%, rgba(24, 210, 110, 0) 42%, rgba(0, 0, 0, 0.42) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#header .container {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-theme="light"] #header::before {
+  background: linear-gradient(180deg, rgba(24, 180, 100, 0.08) 0%, rgba(24, 180, 100, 0) 45%, rgba(30, 50, 40, 0.10) 100%);
+}
+
+/* Avatar inisial testimoni (pengganti foto template, 2026-11-18) */
+.testimonials .testimonial-item .testimonial-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #18d26e, #0b8a52);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/*--------------------------------------------------------------
+# Animasi ringan (2026-11-18) — orb melayang di hero, animasi
+# masuk hero, kartu berjenjang, garis bawah nav. Parallax &
+# smooth-scroll lerp DICABUT (terasa berat saat scroll). Semua
+# dimatikan saat prefers-reduced-motion.
+--------------------------------------------------------------*/
+#header::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  left: -90px;
+  bottom: -110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24, 210, 110, 0.20), rgba(24, 210, 110, 0) 65%);
+  pointer-events: none;
+  z-index: 0;
+  animation: orbFloat 11s ease-in-out infinite alternate;
+}
+
+html[data-theme="light"] #header::after {
+  opacity: 0.5;
+}
+
+@keyframes orbFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(46px, -30px) scale(1.08); }
+}
+
+@keyframes heroUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+
+#header .container > * {
+  animation: heroUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+#header .container > *:nth-child(2) { animation-delay: 0.12s; }
+#header .container > *:nth-child(3) { animation-delay: 0.24s; }
+#header .container > *:nth-child(4) { animation-delay: 0.36s; }
+#header .container > *:nth-child(5) { animation-delay: 0.48s; }
+
+.rv {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.rv-in {
+  opacity: 1;
+  transform: none;
+}
+
+#navbar .nav-link {
+  position: relative;
+}
+
+#navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: #18d26e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+#navbar .nav-link:hover::after,
+#navbar .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header::after { animation: none; }
+  #header .container > * { animation: none; }
+  .rv { opacity: 1; transform: none; transition: none; }
+}
+
+/* Layar sangat pendek: hero boleh scroll internal lagi */
+@media (max-height: 500px) {
+  #header {
+    overflow-y: auto;
+  }
+}
+
+/* Fix hover Layanan di mode terang (2026-11-18): aturan dasar terang
+   mengalahkan hover template sehingga kartu tetap putih sementara
+   teksnya jadi putih — teks hilang. Samakan dengan mode gelap:
+   kartu hijau penuh saat hover. */
+html[data-theme="light"] .services .icon-box:hover {
+  background: #18d26e;
+  border-color: #18d26e;
+}
+
+html[data-theme="light"] .services .icon-box:hover p {
+  color: #fff;
+}
+
+html[data-theme="light"] .services .icon-box:hover .icon::before {
+  background: #35e888;
 }

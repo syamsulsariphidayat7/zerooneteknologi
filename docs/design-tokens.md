@@ -52,6 +52,31 @@ Dimuat via `next/font/google` di `app/layout.tsx`, dirujuk lewat variabel CSS:
 - Scrollbar halaman: 10px, track #070807 (terang #e8ebee), thumb gradien
   #18d26e -> #0e9f5d radius 8px.
 
+## Animasi & Parallax (2026-11-18)
+
+- Parallax & smooth-scroll lerp: DICABUT 2026-11-18 (terasa berat
+  saat scroll — layer layar penuh digerakkan tiap frame).
+- Sentuhan yang dipertahankan (sekali-jalan / murah): orb hijau
+  melayang di hero (11 dtk), animasi masuk hero berjenjang 0,12 dtk,
+  kartu .rv muncul berjenjang 70 mdtk, garis bawah nav hijau saat
+  hover/aktif. Scroll-behavior smooth CSS untuk lompatan anchor.
+- `prefers-reduced-motion` mematikan seluruhnya.
+
+## Pola per Section (2026-11-18)
+
+Satu pola per section, menempel di kotak `.container` (gelap & terang):
+
+- Tentang: **Circuit** — tile SVG seamless 220px (`pattern-circuit.svg`
+  / `-light`), garis opacity ±0,07.
+- Layanan: **Jaringan** — motif mesh SVG 880px di kanan atas, tepi
+  memudar via mask radial (`pattern-mesh.svg` / `-light`), no-repeat.
+- Portfolio: **Dot Grid** — radial-gradient CSS murni, titik 1,2px tiap
+  26px.
+- Kontak: **Glow + Aksen Garis** — dua radial hijau lembut + dua garis
+  vertikal aksen 5px (kanan atas & kiri bawah), CSS murni.
+
+Kandidat Grid Blueprint & Kontur dihapus atas pilihan Syamsul.
+
 ## Background per Tema (2026-11-18)
 
 - Gelap: `bg-tech.jpg` (circuit tipis hijau-cyan + globe jaringan di

@@ -5,7 +5,6 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
-import Credits from "@/components/Credits";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import BackToTop from "@/components/BackToTop";
 
@@ -19,7 +18,6 @@ export default function HomePage() {
       <Services />
       <Portfolio />
       <Contact />
-      <Credits />
       <WhatsAppFloat />
       <BackToTop />
     </>

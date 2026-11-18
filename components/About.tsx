@@ -5,18 +5,13 @@ import Testimonials from "./Testimonials";
 
 const INTERESTS = [
   { icon: "ri-community-line", color: "#ffbb2c", label: "Desa Digital", first: true },
-  { icon: "ri-wifi-line", color: "#5578ff", label: "Internet Desa" },
+  { icon: "ri-wifi-line", color: "#5578ff", label: "Jaringan Internet" },
   { icon: "ri-code-s-slash-line", color: "#e80368", label: "Software House" },
   { icon: "ri-global-line", color: "#e361ff", label: "Website & Portal", lgFirst: true },
   { icon: "ri-smartphone-line", color: "#47aeff", label: "Aplikasi Mobile", spaced: true },
   { icon: "ri-cpu-line", color: "#ffa76e", label: "Internet of Things", spaced: true },
   { icon: "ri-video-line", color: "#11dbcf", label: "CCTV & Keamanan", spaced: true },
-  { icon: "ri-shopping-cart-2-line", color: "#4233ff", label: "Lapak Desa & E-Commerce", spaced: true },
-];
-
-const TEAM = [
-  { name: "Sasa Nurjaman", role: "Teknik Informatika · Programmer · Jaringan" },
-  { name: "Syamsul Sarip Hidayat", role: "Teknik Informatika · Programmer · Jaringan" },
+  { icon: "ri-shopping-cart-2-line", color: "#4233ff", label: "E-Commerce", spaced: true },
 ];
 
 export default function About() {
@@ -45,7 +40,7 @@ export default function About() {
             <h3>PT Zero One Teknologi — don&apos;t limit yourself</h3>
             <p className="fst-italic">
               Perusahaan teknologi informasi yang berfokus pada pengembangan sistem informasi, teknologi internet, dan
-              telekomunikasi — dengan spesialisasi pada program Desa Digital dan Internet Desa.
+              telekomunikasi untuk instansi, bisnis, dan masyarakat.
             </p>
             <div className="row">
               <div className="col-lg-6">
@@ -79,8 +74,8 @@ export default function About() {
             <h3 className="resume-title">Visi</h3>
             <div className="resume-item">
               <p>
-                Menjadi perusahaan software house, pengadaan jaringan Internet Desa, dan penyedia Aplikasi Desa nomor
-                satu di Indonesia dalam rangka mendukung program pemerintah untuk mewujudkan desa yang maju dan
+                Menjadi perusahaan software house, pengadaan jaringan internet, dan penyedia aplikasi nomor
+                satu di Indonesia dalam rangka mendukung program pemerintah untuk mewujudkan masyarakat yang maju dan
                 mandiri.
               </p>
             </div>
@@ -91,9 +86,9 @@ export default function About() {
               <ul>
                 <li>Membentuk Tim Strategi, Manajemen, dan Operasional yang solid.</li>
                 <li>Membuat brand Desa Digital berdaya guna sehingga bisa bersaing di kelas dunia.</li>
-                <li>Memberikan solusi dan kemudahan untuk mewujudkan good and clean governance dalam pelayanan publik.</li>
-                <li>Meningkatkan kemampuan Iptek dan inovasi sebagai pendamping kemajuan desa sesuai perkembangan zaman.</li>
-                <li>Memberikan layanan internet desa untuk meningkatkan efektivitas dan efisiensi pelayanan desa.</li>
+                <li>Memberikan solusi dan kemudahan untuk mewujudkan tata kelola yang baik dan bersih dalam pelayanan publik.</li>
+                <li>Meningkatkan kemampuan Iptek dan inovasi sebagai pendamping kemajuan masyarakat sesuai perkembangan zaman.</li>
+                <li>Memberikan layanan internet untuk meningkatkan efektivitas dan efisiensi pelayanan publik.</li>
               </ul>
             </div>
           </div>
@@ -199,24 +194,6 @@ export default function About() {
               </p>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* ======= Tim ======= */}
-      <div className="interests container">
-        <div className="section-title">
-          <h2>Tim Kami</h2>
-        </div>
-        <div className="row">
-          {TEAM.map((person, idx) => (
-            <div key={person.name} className={`col-md-6${idx > 0 ? " mt-4 mt-md-0" : ""}`}>
-              <div className="icon-box">
-                <i className="ri-user-3-line" style={{ color: "#18d26e" }}></i>
-                <h3>{person.name}</h3>
-                <p style={{ margin: 0 }}>{person.role}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
 

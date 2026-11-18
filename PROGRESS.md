@@ -106,6 +106,49 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
   dari cermin remote basis `f21f606` (prosedur baru):
   `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
   bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: Fix hover Layanan mode terang: kartu tetap putih saat
+  hover (aturan dasar terang menang atas hover template) sementara
+  teks berubah putih -> teks hilang. Ditambah aturan hover terang
+  eksplisit: kartu hijau #18d26e + teks putih, sama seperti gelap.
+  Patch: `your_files/zerooneteknologi-layanan-hover.patch`, basis = pasca scroll-fix.
+- 2026-11-18: Scrollbar kustom DICABUT (keputusan Syamsul dari
+  screenshot: bar hijau terlalu dominan) — kembali ke scrollbar
+  bawaan browser. Scroll hero diperbaiki: #header overflow-y: auto
+  (warisan template, menelan roda mouse) -> visible; layar sangat
+  pendek (<=500px) tetap auto. Patch:
+  `your_files/zerooneteknologi-scroll-fix.patch`, basis = pasca ringankan.
+- 2026-11-18: Ringankan animasi (keluhan Syamsul: "berasa berat"):
+  ParallaxFX + SmoothScroll DIHAPUS total (komponen + aturan CSS
+  parallax background/pola) — yang kontinu menggerakkan layer layar
+  penuh tiap frame scroll. Tersisa animasi ringan sekali-jalan:
+  orb hero, animasi masuk hero, kartu berjenjang, garis bawah nav.
+  Patch: `your_files/zerooneteknologi-ringankan.patch`, basis = pasca bersih-animasi.
+- 2026-11-18: Efek parallax + sentuhan animasi + smooth scroll
+  (instruksi Syamsul): ParallaxFX (background bergeser pelan via
+  --bg-shift, konten hero turun+memudar saat scroll menjauh — mati saat
+  header-top, pola Tentang/Layanan bergeser via --pat-y), orb hijau
+  melayang di hero (#header::after), animasi masuk hero berjenjang,
+  kartu muncul berjenjang (RevealOnScroll + class .rv), garis bawah nav
+  geser, SmoothScroll lerp roda mouse (pointer presisi saja).
+  prefers-reduced-motion mematikan semuanya.
+- 2026-11-18: Pembersihan konten (instruksi Syamsul): kredit "Designed by
+  BootstrapMade" dihapus total (komponen Credits dibuang), blok Tim Kami
+  dihapus, bahasa FULL Indonesia (judul Testimoni, filter/judul portfolio,
+  halaman Detail Portfolio + contoh proyek diganti aplikasi stok
+  distributor, "Loading" -> "Mengirim..."), testimoni ditulis ulang jadi
+  5 placeholder realistis Indonesia + avatar inisial. Positioning global:
+  kata "desa" di web HANYA pada produk Desa Digital — Internet Desa
+  tampil sebagai "Jaringan Internet", visi/misi versi web dipersingkat,
+  og-image diperbarui. Patch (digabung dengan animasi di bawah):
+  `your_files/zerooneteknologi-bersih-animasi.patch`, basis = pasca pola-section.
+- 2026-11-18: Pola per section (pilihan Syamsul dari lembar kumpulan
+  pola; Blueprint & Kontur dihapus): Tentang=Circuit (tile SVG),
+  Layanan=Jaringan (motif mesh SVG, fade radial), Portfolio=Dot Grid
+  (CSS), Kontak=Glow + Aksen Garis (CSS, gaya Zerone). Varian terang
+  untuk keempatnya. Ditambah instruksi Syamsul di menit yang sama:
+  hero diberi gradien (#header::before — tint hijau 10% di atas,
+  memudar 42%, dasar digelapkan 42%; terang lebih lembut).
+  Patch: `your_files/zerooneteknologi-pola-section.patch`, basis = 204fffb.
 - 2026-11-18: Mode terang dapat background SENDIRI (keluhan Syamsul: bg
   abu "berasa numpang"): bg-tech-light.jpg — kembaran terang bg-tech
   (komposisi sama, basis #f4f7f5); body::before terang menukar gambar +

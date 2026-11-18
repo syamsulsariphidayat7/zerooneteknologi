@@ -100,7 +100,7 @@ export default function Contact() {
             <textarea className="form-control" name="message" rows={5} placeholder="Pesan" required></textarea>
           </div>
           <div className="my-3">
-            <div className="loading" style={{ display: status === "loading" ? "block" : "none" }}>Loading</div>
+            <div className="loading" style={{ display: status === "loading" ? "block" : "none" }}>Mengirim...</div>
             <div className="error-message" style={{ display: status === "error" ? "block" : "none" }}>{error}</div>
             <div className="sent-message" style={{ display: status === "sent" ? "block" : "none" }}>
               Pesan Anda sudah terkirim. Terima kasih!

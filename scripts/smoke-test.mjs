@@ -2,7 +2,7 @@
  * Smoke test dasar — tanpa framework test tambahan.
  * Menjalankan server production (build dulu bila belum ada), lalu memeriksa:
  *  1. GET /                  -> 200 + konten PT (PT Zero One Teknologi)
- *  2. GET /portfolio-details -> 200 + konten default (Project information)
+ *  2. GET /portfolio-details -> 200 + konten proyek (Informasi Proyek)
  *  3. POST /api/contact data valid   -> 200 { ok: true }
  *  4. POST /api/contact field kosong -> 400
  *  5. POST /api/contact email salah  -> 400
@@ -65,7 +65,7 @@ try {
   const details = await fetch(BASE + "/portfolio-details");
   const detailsHtml = await details.text();
   check("GET /portfolio-details -> 200", details.status === 200, `(status ${details.status})`);
-  check("GET /portfolio-details berisi konten default", detailsHtml.includes("Project information"));
+  check("GET /portfolio-details berisi konten proyek", detailsHtml.includes("Informasi Proyek"));
 
   const post = (payload) =>
     fetch(BASE + "/api/contact", {
