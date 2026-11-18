@@ -6,9 +6,12 @@ import Swiper from "swiper";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useLang } from "@/lib/i18n";
 
 /** Slider di halaman portfolio-details — port dari main.js asli. */
 export default function PortfolioDetailsContent() {
+  const { t } = useLang();
+  const d = t.details;
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,7 +32,7 @@ export default function PortfolioDetailsContent() {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              <h2 className="portfolio-title">Aplikasi Stok & Penjualan Distributor</h2>
+              <h2 className="portfolio-title">{d.title}</h2>
 
               <div className="portfolio-details-slider swiper" ref={sliderRef}>
                 <div className="swiper-wrapper align-items-center">
@@ -51,17 +54,15 @@ export default function PortfolioDetailsContent() {
             </div>
 
             <div className="col-lg-4 portfolio-info">
-              <h3>Informasi Proyek</h3>
+              <h3>{d.infoTitle}</h3>
               <ul>
-                <li><strong>Kategori</strong>: Aplikasi Web</li>
-                <li><strong>Klien</strong>: Perusahaan Distributor, Garut</li>
-                <li><strong>Tanggal Proyek</strong>: 8 September 2026</li>
-                <li><strong>URL Proyek</strong>: <a href="#">app.contoh.id</a></li>
+                <li><strong>{d.category}</strong>: {d.categoryValue}</li>
+                <li><strong>{d.client}</strong>: {d.clientValue}</li>
+                <li><strong>{d.date}</strong>: {d.dateValue}</li>
+                <li><strong>{d.url}</strong>: <a href="#">app.contoh.id</a></li>
               </ul>
 
-              <p>
-                Aplikasi web untuk pencatatan stok dan penjualan distributor: barang masuk dan keluar tercatat secara real-time, nota penjualan tercetak otomatis, dan laporan harian dapat dipantau pemilik dari mana saja. Tampilannya dirancang sederhana agar staf gudang dan admin cepat beradaptasi tanpa pelatihan panjang.
-              </p>
+              <p>{d.desc}</p>
             </div>
           </div>
         </div>

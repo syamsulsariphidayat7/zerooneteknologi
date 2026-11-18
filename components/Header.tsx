@@ -1,13 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useLang } from "@/lib/i18n";
 
+// Label teks berasal dari kamus bahasa (urutan sama dengan t.nav).
 const NAV_LINKS = [
-  { hash: "#header", label: "Beranda", icon: "bi-house" },
-  { hash: "#about", label: "Tentang", icon: "bi-info-circle" },
-  { hash: "#services", label: "Layanan", icon: "bi-grid" },
-  { hash: "#portfolio", label: "Portfolio", icon: "bi-briefcase" },
-  { hash: "#contact", label: "Kontak", icon: "bi-envelope" },
+  { hash: "#header", icon: "bi-house" },
+  { hash: "#about", icon: "bi-info-circle" },
+  { hash: "#services", icon: "bi-grid" },
+  { hash: "#portfolio", icon: "bi-briefcase" },
+  { hash: "#contact", icon: "bi-envelope" },
 ];
 
 /**
@@ -18,6 +20,7 @@ const NAV_LINKS = [
  * hero menjaga halaman tidak melompat saat header keluar dari alur.
  */
 export default function Header() {
+  const { lang, setLang, t } = useLang();
   const [active, setActive] = useState("#header");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [topBar, setTopBar] = useState(false);
@@ -117,7 +120,7 @@ export default function Header() {
             </a>
           </h1>
           <h2>
-            Mitra teknologi untuk <span>software, aplikasi, dan solusi digital</span> terpadu
+            {t.hero.pre}<span>{t.hero.span}</span>{t.hero.post}
           </h2>
           <p className="hero-motto" style={{ fontStyle: "italic", marginTop: "12px", letterSpacing: "0.04em" }}>
             &ldquo;don&apos;t limit yourself&rdquo;
@@ -125,7 +128,7 @@ export default function Header() {
 
           <nav id="navbar" className="navbar">
             <ul>
-              {NAV_LINKS.map((link) => (
+              {NAV_LINKS.map((link, i) => (
                 <li key={link.hash}>
                   <a
                     className={`nav-link${active === link.hash ? " active" : ""}`}
@@ -135,16 +138,27 @@ export default function Header() {
                       goTo(link.hash);
                     }}
                   >
-                    {link.label}
+                    {t.nav[i]}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
 
-          <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label="Ganti tema terang/gelap">
+          <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label={t.theme.aria}>
             <i className={`bi ${theme === "dark" ? "bi-sun" : "bi-moon"}`}></i>
-            <span className="theme-toggle-label">{theme === "dark" ? "Mode Terang" : "Mode Gelap"}</span>
+            <span className="theme-toggle-label">{theme === "dark" ? t.theme.toLight : t.theme.toDark}</span>
+          </button>
+
+          <button
+            type="button"
+            className="lang-toggle"
+            onClick={() => setLang(lang === "id" ? "en" : "id")}
+            aria-label={t.langToggle.aria}
+          >
+            <i className="bi bi-globe"></i>
+            <span className="lang-toggle-label">{t.langToggle.label}</span>
+            <span className="lang-toggle-code">{lang === "id" ? "EN" : "ID"}</span>
           </button>
 
           <div className="social-links">
@@ -157,7 +171,7 @@ export default function Header() {
 
         {/* Navigasi bawah khusus mobile (pengganti hamburger) */}
         <nav className="mobile-bottom-nav" aria-label="Navigasi mobile">
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS.map((link, i) => (
             <a
               key={link.hash}
               href={link.hash}
@@ -168,7 +182,7 @@ export default function Header() {
               }}
             >
               <i className={`bi ${link.icon}`}></i>
-              <span>{link.label}</span>
+              <span>{t.nav[i]}</span>
             </a>
           ))}
         </nav>

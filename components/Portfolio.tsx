@@ -4,27 +4,25 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "glightbox/dist/css/glightbox.min.css";
+import { useLang } from "@/lib/i18n";
 
 // Isotope & GLightbox menyentuh `window` saat import, jadi dimuat
 // dinamis di useEffect (client-only), bukan import statis.
 
-const FILTERS = [
-  { filter: "*", label: "Semua" },
-  { filter: ".filter-app", label: "Aplikasi" },
-  { filter: ".filter-card", label: "Kartu" },
-  { filter: ".filter-web", label: "Web" },
-];
+// Label/judul/kategori berasal dari kamus bahasa (urutan sejajar).
+const FILTERS = ["*", ".filter-app", ".filter-card", ".filter-web"];
 
-const ITEMS = [
-  { img: 1, title: "Aplikasi 1", category: "Aplikasi", filterClass: "filter-app" },
-  { img: 2, title: "Web 1", category: "Web", filterClass: "filter-web" },
-  { img: 3, title: "Aplikasi 2", category: "Aplikasi", filterClass: "filter-app" },
-  { img: 4, title: "Kartu 2", category: "Kartu", filterClass: "filter-card" },
-  { img: 5, title: "Web 2", category: "Web", filterClass: "filter-web" },
-  { img: 6, title: "Aplikasi 3", category: "Aplikasi", filterClass: "filter-app" },
-  { img: 7, title: "Kartu 1", category: "Kartu", filterClass: "filter-card" },
-  { img: 8, title: "Kartu 3", category: "Kartu", filterClass: "filter-card" },
-  { img: 9, title: "Web 3", category: "Web", filterClass: "filter-web" },
+type CatKey = "app" | "card" | "web";
+const ITEMS: { img: number; cat: CatKey; filterClass: string }[] = [
+  { img: 1, cat: "app", filterClass: "filter-app" },
+  { img: 2, cat: "web", filterClass: "filter-web" },
+  { img: 3, cat: "app", filterClass: "filter-app" },
+  { img: 4, cat: "card", filterClass: "filter-card" },
+  { img: 5, cat: "web", filterClass: "filter-web" },
+  { img: 6, cat: "app", filterClass: "filter-app" },
+  { img: 7, cat: "card", filterClass: "filter-card" },
+  { img: 8, cat: "card", filterClass: "filter-card" },
+  { img: 9, cat: "web", filterClass: "filter-web" },
 ];
 
 /**
@@ -33,6 +31,7 @@ const ITEMS = [
  * (di template asli dibuka sebagai lightbox eksternal).
  */
 export default function Portfolio() {
+  const { t } = useLang();
   const containerRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isotopeRef = useRef<any>(null);
@@ -92,7 +91,7 @@ export default function Portfolio() {
       <div className="container">
         <div className="section-title">
           <h2>Portfolio</h2>
-          <p>My Works</p>
+          <p>{t.portfolio.big}</p>
         </div>
 
         <div className="row">
@@ -100,12 +99,12 @@ export default function Portfolio() {
             <ul id="portfolio-flters">
               {FILTERS.map((f, i) => (
                 <li
-                  key={f.filter}
-                  data-filter={f.filter}
+                  key={f}
+                  data-filter={f}
                   className={i === 0 ? "filter-active" : ""}
-                  onClick={(e) => handleFilter(e, f.filter)}
+                  onClick={(e) => handleFilter(e, f)}
                 >
-                  {f.label}
+                  {t.portfolio.filters[i]}
                 </li>
               ))}
             </ul>
@@ -113,7 +112,7 @@ export default function Portfolio() {
         </div>
 
         <div className="row portfolio-container" ref={containerRef}>
-          {ITEMS.map((item) => (
+          {ITEMS.map((item, i) => (
             <div key={item.img} className={`col-lg-4 col-md-6 portfolio-item ${item.filterClass}`}>
               <div className="portfolio-wrap">
                 <Image
@@ -126,18 +125,18 @@ export default function Portfolio() {
                   style={{ height: "auto" }}
                 />
                 <div className="portfolio-info">
-                  <h4>{item.title}</h4>
-                  <p>{item.category}</p>
+                  <h4>{t.portfolio.titles[i]}</h4>
+                  <p>{t.portfolio.categories[item.cat]}</p>
                   <div className="portfolio-links">
                     <a
                       href={`/assets/img/portfolio/portfolio-${item.img}.jpg`}
                       data-gallery="portfolioGallery"
                       className="portfolio-lightbox"
-                      title={item.title}
+                      title={t.portfolio.titles[i]}
                     >
                       <i className="bx bx-plus"></i>
                     </a>
-                    <Link href="/portfolio-details" title="Portfolio Details">
+                    <Link href="/portfolio-details" title={t.portfolio.detailsLink}>
                       <i className="bx bx-link"></i>
                     </Link>
                   </div>

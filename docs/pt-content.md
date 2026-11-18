@@ -27,8 +27,14 @@ Halaman 10 PDF profil berupa gambar (tidak terbaca sebagai teks).
 - Counter: 99+ klien, 50+ proyek (klaim profil perusahaan), 6 bidang usaha
   KBLI, 6 layanan utama.
 - Layanan (6): Desa Digital, Jaringan Internet (nama tampil web; di dokumen
-  resmi "Internet Desa"), Software House, Pembuatan Website, Konsultasi & IoT,
-  CCTV & Keamanan.
+  resmi "Internet Desa"), Pengembangan Perangkat Lunak (nama tampil web;
+  di dokumen "Software House"), Pembuatan Website, Konsultasi & IoT,
+  CCTV & Keamanan. Multi-bahasa (2026-11-18, ADR 0004): situs kini dwibahasa ID/EN
+  lewat toggle di header; kamus di `lib/i18n.tsx` — teks Inggris di
+  sana adalah versi tampil web, teks resmi dokumen tetap Indonesia.
+  Bahasa Inggris di web hanya dipertahankan bila memang
+  dibutuhkan (instruksi pemilik 2026-11-18): moto resmi, nama merek &
+  singkatan teknis, kata serapan baku, judul resmi KBLI.
 - Bidang usaha (KBLI, dari lampiran NIB): 58200, 62012, 63121, 62024, 61913,
   61924 — ditampilkan judul + kode saja.
 - Cara Kerja (dari proposal website 2024): Perencanaan → Pembuatan →

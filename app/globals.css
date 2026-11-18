@@ -2076,3 +2076,81 @@ section .container,
 #header .container {
   max-width: 90%;
 }
+
+/*--------------------------------------------------------------
+# Toggle Bahasa (2026-11-18, ADR 0004) — pil di samping toggle
+# tema; di mobile jadi lingkaran fixed di kiri tombol tema.
+--------------------------------------------------------------*/
+.lang-toggle {
+  margin-top: 30px;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang-toggle:hover {
+  background: #18d26e;
+  border-color: #18d26e;
+  color: #fff;
+}
+
+.lang-toggle-code {
+  display: none;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+#header.header-top .lang-toggle {
+  margin-top: 0;
+  margin-left: 10px;
+  padding: 6px 14px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+html[data-theme="light"] .lang-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  color: #212529;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="light"] .lang-toggle:hover {
+  background: #18d26e;
+  border-color: #18d26e;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  #header .lang-toggle,
+  #header.header-top .lang-toggle {
+    position: fixed;
+    top: 12px;
+    right: 62px;
+    z-index: 998;
+    margin: 0;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  #header .lang-toggle .lang-toggle-label,
+  #header .lang-toggle i {
+    display: none;
+  }
+
+  #header .lang-toggle .lang-toggle-code {
+    display: inline;
+  }
+}

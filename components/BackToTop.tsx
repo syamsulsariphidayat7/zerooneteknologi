@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLang } from "@/lib/i18n";
 
 /**
  * Tombol kembali ke atas — muncul setelah halaman digulir cukup jauh,
  * bertumpuk di atas tombol WhatsApp (kanan bawah).
  */
 export default function BackToTop() {
+  const { t } = useLang();
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ export default function BackToTop() {
       type="button"
       className={`back-to-top${show ? " show" : ""}`}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      aria-label="Kembali ke atas"
+      aria-label={t.floats.backTop}
     >
       <i className="bi bi-chevron-up"></i>
     </button>

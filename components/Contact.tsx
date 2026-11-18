@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLang } from "@/lib/i18n";
 
 type FormStatus = "idle" | "loading" | "sent" | "error";
 
@@ -10,6 +11,8 @@ type FormStatus = "idle" | "loading" | "sent" | "error";
  * yang sama: .loading / .error-message / .sent-message.
  */
 export default function Contact() {
+  const { t } = useLang();
+  const c = t.contact;
   const [status, setStatus] = useState<FormStatus>("idle");
   const [error, setError] = useState("");
 
@@ -28,12 +31,14 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
       const json = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(json.error || "Failed to send message.");
+      if (!res.ok) throw new Error(json.error || "");
       setStatus("sent");
       form.reset();
     } catch (err) {
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Failed to send message.");
+      const raw = err instanceof Error ? err.message : "";
+      // Pesan error API berbahasa Inggris: petakan ke bahasa aktif
+      setError(raw ? (c.apiErrors[raw] ?? raw) : c.errorFallback);
     }
   };
 
@@ -41,15 +46,15 @@ export default function Contact() {
     <section id="contact" className="contact">
       <div className="container">
         <div className="section-title">
-          <h2>Contact</h2>
-          <p>Hubungi Kami</p>
+          <h2>{c.title}</h2>
+          <p>{c.big}</p>
         </div>
 
         <div className="row mt-2">
           <div className="col-md-6 d-flex align-items-stretch">
             <div className="info-box">
               <i className="bx bx-map"></i>
-              <h3>Alamat Kami</h3>
+              <h3>{c.addressTitle}</h3>
               <p>Kp. Cibojong RT 004 RW 005, Balewangi, Cisurupan, Garut 44163</p>
             </div>
           </div>
@@ -57,7 +62,7 @@ export default function Contact() {
           <div className="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
             <div className="info-box">
               <i className="bx bx-share-alt"></i>
-              <h3>Social Profiles</h3>
+              <h3>{c.socialTitle}</h3>
               <div className="social-links">
                 <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
                 <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
@@ -71,14 +76,14 @@ export default function Contact() {
           <div className="col-md-6 mt-4 d-flex align-items-stretch">
             <div className="info-box">
               <i className="bx bx-envelope"></i>
-              <h3>Email Kami</h3>
+              <h3>{c.emailTitle}</h3>
               <p>zeroone212117@gmail.com</p>
             </div>
           </div>
           <div className="col-md-6 mt-4 d-flex align-items-stretch">
             <div className="info-box">
               <i className="bx bx-phone-call"></i>
-              <h3>Telepon Kami</h3>
+              <h3>{c.phoneTitle}</h3>
               <p>0857 2291 6809</p>
             </div>
           </div>
@@ -87,27 +92,27 @@ export default function Contact() {
         <form onSubmit={handleSubmit} role="form" className="php-email-form mt-4">
           <div className="row">
             <div className="col-md-6 form-group">
-              <input type="text" name="name" className="form-control" id="name" placeholder="Nama Anda" required />
+              <input type="text" name="name" className="form-control" id="name" placeholder={c.phName} required />
             </div>
             <div className="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" className="form-control" name="email" id="email" placeholder="Email Anda" required />
+              <input type="email" className="form-control" name="email" id="email" placeholder={c.phEmail} required />
             </div>
           </div>
           <div className="form-group mt-3">
-            <input type="text" className="form-control" name="subject" id="subject" placeholder="Subjek" required />
+            <input type="text" className="form-control" name="subject" id="subject" placeholder={c.phSubject} required />
           </div>
           <div className="form-group mt-3">
-            <textarea className="form-control" name="message" rows={5} placeholder="Pesan" required></textarea>
+            <textarea className="form-control" name="message" rows={5} placeholder={c.phMessage} required></textarea>
           </div>
           <div className="my-3">
-            <div className="loading" style={{ display: status === "loading" ? "block" : "none" }}>Mengirim...</div>
+            <div className="loading" style={{ display: status === "loading" ? "block" : "none" }}>{c.sending}</div>
             <div className="error-message" style={{ display: status === "error" ? "block" : "none" }}>{error}</div>
             <div className="sent-message" style={{ display: status === "sent" ? "block" : "none" }}>
-              Pesan Anda sudah terkirim. Terima kasih!
+              {c.sent}
             </div>
           </div>
           <div className="text-center">
-            <button type="submit" disabled={status === "loading"}>Kirim Pesan</button>
+            <button type="submit" disabled={status === "loading"}>{c.send}</button>
           </div>
         </form>
       </div>

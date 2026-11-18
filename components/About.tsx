@@ -1,26 +1,33 @@
+"use client";
+
 import Image from "next/image";
 import PureCounter from "./PureCounter";
 import Skills from "./Skills";
 import Testimonials from "./Testimonials";
+import { useLang } from "@/lib/i18n";
 
+// Ikon + warna + pola spasi tetap; label teks berasal dari kamus bahasa.
 const INTERESTS = [
-  { icon: "ri-community-line", color: "#ffbb2c", label: "Desa Digital", first: true },
-  { icon: "ri-wifi-line", color: "#5578ff", label: "Jaringan Internet" },
-  { icon: "ri-code-s-slash-line", color: "#e80368", label: "Perangkat Lunak" },
-  { icon: "ri-global-line", color: "#e361ff", label: "Website & Portal", lgFirst: true },
-  { icon: "ri-smartphone-line", color: "#47aeff", label: "Aplikasi Mobile", spaced: true },
-  { icon: "ri-cpu-line", color: "#ffa76e", label: "IoT & Sensor", spaced: true },
-  { icon: "ri-video-line", color: "#11dbcf", label: "CCTV & Keamanan", spaced: true },
-  { icon: "ri-shopping-cart-2-line", color: "#4233ff", label: "E-Dagang", spaced: true },
+  { icon: "ri-community-line", color: "#ffbb2c", first: true },
+  { icon: "ri-wifi-line", color: "#5578ff" },
+  { icon: "ri-code-s-slash-line", color: "#e80368" },
+  { icon: "ri-global-line", color: "#e361ff", lgFirst: true },
+  { icon: "ri-smartphone-line", color: "#47aeff", spaced: true },
+  { icon: "ri-cpu-line", color: "#ffa76e", spaced: true },
+  { icon: "ri-video-line", color: "#11dbcf", spaced: true },
+  { icon: "ri-shopping-cart-2-line", color: "#4233ff", spaced: true },
 ];
 
 export default function About() {
+  const { t } = useLang();
+  const a = t.about;
+
   return (
     <section id="about" className="about">
       {/* ======= About Me ======= */}
       <div className="about-me container">
         <div className="section-title">
-          <h2>Tentang</h2>
+          <h2>{a.title}</h2>
         </div>
 
         <div className="row">
@@ -37,25 +44,22 @@ export default function About() {
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content">
             <h3>PT Zero One Teknologi — don&apos;t limit yourself</h3>
-            <p className="fst-italic">
-              Perusahaan teknologi informasi yang berfokus pada pengembangan sistem informasi, teknologi internet, dan
-              telekomunikasi untuk instansi, bisnis, dan masyarakat.
-            </p>
+            <p className="fst-italic">{a.intro}</p>
             <div className="row">
               <div className="col-lg-6">
                 <ul>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Alamat:</strong> <span>Kp. Cibojong, Balewangi, Cisurupan, Garut</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Website:</strong> <span>zerooneteknologi.web.id</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Telepon:</strong> <span>0857 2291 6809</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Email:</strong> <span>zeroone212117@gmail.com</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>{a.labels.address}:</strong> <span>Kp. Cibojong, Balewangi, Cisurupan, Garut</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>{a.labels.website}:</strong> <span>zerooneteknologi.web.id</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>{a.labels.phone}:</strong> <span>0857 2291 6809</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>{a.labels.email}:</strong> <span>zeroone212117@gmail.com</span></li>
                 </ul>
               </div>
               <div className="col-lg-6">
                 <ul>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Status Modal:</strong> <span>PMDN</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Skala Usaha:</strong> <span>Usaha Kecil</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Bidang:</strong> <span>Teknologi Informasi</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Wilayah:</strong> <span>Garut, Jawa Barat</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>{a.labels.capital}:</strong> <span>PMDN</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>{a.labels.scale}:</strong> <span>{a.values.scale}</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>{a.labels.field}:</strong> <span>{a.values.field}</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>{a.labels.region}:</strong> <span>{a.values.region}</span></li>
                 </ul>
               </div>
             </div>
@@ -66,35 +70,29 @@ export default function About() {
       {/* ======= Visi & Misi (gabungan section Profil; id="resume" = jangkar lama) ======= */}
       <div className="resume container" id="resume">
         <div className="section-title">
-          <h2>Visi &amp; Misi</h2>
+          <h2>{a.visionMission}</h2>
         </div>
         <div className="row">
           <div className="col-lg-6">
-            <h3 className="resume-title">Visi</h3>
+            <h3 className="resume-title">{a.vision}</h3>
             <div className="resume-item">
-              <p>
-                Menjadi mitra teknologi terpercaya bagi bisnis dan instansi untuk bertumbuh melalui
-                transformasi digital yang andal, aman, dan terjangkau — diakui di tingkat nasional
-                maupun global.
-              </p>
+              <p>{a.visionText}</p>
             </div>
           </div>
           <div className="col-lg-6">
-            <h3 className="resume-title">Misi</h3>
+            <h3 className="resume-title">{a.mission}</h3>
             <div className="resume-item">
               <ul>
-                <li>Membangun perangkat lunak, aplikasi, dan website yang menyelesaikan masalah nyata klien — berkualitas, aman, dan dengan biaya yang rasional.</li>
-                <li>Menyediakan jaringan internet dan infrastruktur teknologi yang stabil untuk menunjang operasional bisnis, instansi, dan layanan publik.</li>
-                <li>Menghadirkan platform Desa Digital untuk membantu pemerintahan desa melayani masyarakat secara modern, cepat, dan transparan.</li>
-                <li>Mendampingi setiap klien dari konsultasi, perencanaan, penerapan, hingga pemeliharaan — semua dalam satu pintu.</li>
-                <li>Berinovasi mengikuti perkembangan teknologi global agar setiap solusi yang ditawarkan selalu relevan dan siap bersaing.</li>
+                {a.missionItems.map((item) => (
+                  <li key={item.slice(0, 24)}>{item}</li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
         <p style={{ marginTop: "10px" }}>
           <a className="pdf-download-btn" href="/profil-pt-zero-one-teknologi.pdf" download>
-            <i className="bi bi-file-earmark-pdf"></i> Unduh Profil Perusahaan (PDF)
+            <i className="bi bi-file-earmark-pdf"></i> {a.pdfButton}
           </a>
         </p>
       </div>
@@ -106,28 +104,28 @@ export default function About() {
             <div className="count-box">
               <i className="bi bi-emoji-smile"></i>
               <PureCounter end={99} duration={1} suffix="+" />
-              <p>Klien</p>
+              <p>{a.counts.clients}</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div className="count-box">
               <i className="bi bi-journal-richtext"></i>
               <PureCounter end={50} duration={1} suffix="+" />
-              <p>Proyek Selesai</p>
+              <p>{a.counts.projects}</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div className="count-box">
               <i className="bi bi-briefcase"></i>
               <PureCounter end={6} duration={1} />
-              <p>Bidang Usaha (KBLI)</p>
+              <p>{a.counts.fields}</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div className="count-box">
               <i className="bi bi-gear"></i>
               <PureCounter end={6} duration={1} />
-              <p>Layanan Utama</p>
+              <p>{a.counts.services}</p>
             </div>
           </div>
         </div>
@@ -138,17 +136,17 @@ export default function About() {
       {/* ======= Interests / Fokus Bidang ======= */}
       <div className="interests container">
         <div className="section-title">
-          <h2>Fokus Bidang</h2>
+          <h2>{a.focusTitle}</h2>
         </div>
         <div className="row">
-          {INTERESTS.map((item) => (
+          {INTERESTS.map((item, i) => (
             <div
-              key={item.label}
+              key={a.interests[i]}
               className={`col-lg-3 col-md-4${item.spaced ? " mt-4" : item.first ? "" : item.lgFirst ? " mt-4 mt-lg-0" : " mt-4 mt-md-0"}`}
             >
               <div className="icon-box">
                 <i className={item.icon} style={{ color: item.color }}></i>
-                <h3>{item.label}</h3>
+                <h3>{a.interests[i]}</h3>
               </div>
             </div>
           ))}
@@ -158,40 +156,24 @@ export default function About() {
       {/* ======= Cara Kerja (gabungan section Profil) ======= */}
       <div className="resume container">
         <div className="section-title">
-          <h2>Cara Kerja</h2>
+          <h2>{a.workTitle}</h2>
         </div>
         <div className="row">
           <div className="col-lg-6">
-            <div className="resume-item">
-              <h4>1. Perencanaan</h4>
-              <p>
-                Pengumpulan dan analisis data serta kebutuhan, termasuk penentuan nama domain dan jenis website atau
-                aplikasi yang akan dibangun — statis atau dinamis.
-              </p>
-            </div>
-            <div className="resume-item">
-              <h4>2. Pembuatan</h4>
-              <p>
-                Pembuatan halaman dan aplikasi berdasarkan data yang diperoleh: penataan tata letak, struktur, dan
-                navigasi penyajian informasi.
-              </p>
-            </div>
+            {a.steps.slice(0, 2).map((step) => (
+              <div className="resume-item" key={step.title}>
+                <h4>{step.title}</h4>
+                <p>{step.text}</p>
+              </div>
+            ))}
           </div>
           <div className="col-lg-6">
-            <div className="resume-item">
-              <h4>3. Implementasi</h4>
-              <p>
-                Hasil pembuatan ditempatkan pada server yang terhubung ke internet sehingga dapat dikunjungi dan
-                digunakan oleh pengguna.
-              </p>
-            </div>
-            <div className="resume-item">
-              <h4>4. Pemeliharaan</h4>
-              <p>
-                Perawatan dan pembaruan berkala agar informasi tetap aktual — halaman dan aplikasi diawasi,
-                dikembangkan, dan diperbarui sesuai kebutuhan.
-              </p>
-            </div>
+            {a.steps.slice(2).map((step) => (
+              <div className="resume-item" key={step.title}>
+                <h4>{step.title}</h4>
+                <p>{step.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

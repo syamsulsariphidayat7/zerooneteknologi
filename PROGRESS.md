@@ -106,6 +106,29 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
   dari cermin remote basis `f21f606` (prosedur baru):
   `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
   bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: MULTI-BAHASA ID/EN dengan toggle (permintaan Syamsul,
+  ADR 0004): kamus statis `lib/i18n.tsx` (Context, tanpa library,
+  tipe EN mengikuti ID — kunci hilang = build gagal); toggle di
+  header samping toggle tema (pil desktop, lingkaran EN/ID di
+  mobile), pilihan tersimpan di localStorage `zo-lang`, SSR tetap
+  Indonesia. Semua string komponen dipindah ke kamus — sekalian
+  membetulkan sisa template "My Works" (Portfolio -> Karya Kami)
+  dan "Contact"/"Social Profiles" di Kontak. PDF tetap Indonesia;
+  error API dipetakan per bahasa di klien. Patch:
+  `your_files/zerooneteknologi-multibahasa.patch`, basis = `f8164ae`
+  (SUDAH termasuk audit bahasa — patch bahasa terpisah tidak berlaku).
+- 2026-11-18: Audit bahasa Inggris (instruksi Syamsul: pertahankan
+  yang memang butuh Inggris): "Software House" -> Pengembangan
+  Perangkat Lunak, "SEO friendly" -> mudah ditemukan di mesin
+  pencari (SEO), "mobile" -> seluler, "online" -> daring, "chat" ->
+  kirim pesan, ejaan penuh "Internet of Things" di Layanan -> IoT.
+  DIPERTAHANKAN: moto resmi "don't limit yourself", nama merek &
+  singkatan teknis (WhatsApp, WiFi, CCTV, IoT, Android, PDF, SEO),
+  kata serapan baku (website, internet, email, server, domain,
+  voucher), judul RESMI KBLI di Bidang Usaha (memuat "E-Commerce" &
+  "Internet of Things" apa adanya), dan kata kunci SEO "Software
+  House Garut" di metadata (tidak tampil, demi pencarian).
+  Patch: `your_files/zerooneteknologi-bahasa.patch`, basis = pasca fullwidth-90.
 - 2026-11-18: Section & hero melebar 90% (permintaan Syamsul,
   direvisi dua kali: "tetap sudut tumpul biar gak terlalu full",
   lalu "mungkin 90%"): container section + hero max-width 90%,
