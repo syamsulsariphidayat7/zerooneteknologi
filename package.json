@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "bootstrap": "5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "boxicons": "^2.1.4",
+    "glightbox": "^3.3.1",
+    "isotope-layout": "^3.0.6",
+    "next": "16.4.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "remixicon": "^4.2.0",
+    "swiper": "^11.1.14"
+  },
+  "description": "Website profil PT Zero One Teknologi — tema template Personal (BootstrapMade) di Next.js 16.",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  },
+  "name": "zerooneteknologi",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start",
+    "test": "node scripts/smoke-test.mjs"
+  },
+  "version": "1.0.0",
+  "packageManager": "pnpm@12.21.0"
+}
