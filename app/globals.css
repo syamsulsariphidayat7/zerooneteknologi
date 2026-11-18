@@ -159,7 +159,8 @@ h6 {
 }
 
 #header.header-top .social-links,
-#header.header-top h2 {
+#header.header-top h2,
+#header.header-top .hero-motto {
   display: none;
 }
 
@@ -563,6 +564,8 @@ section .container {
 
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
+  height: 90px;
+  object-fit: cover;
   border-radius: 50%;
   margin: -40px 0 0 40px;
   position: relative;

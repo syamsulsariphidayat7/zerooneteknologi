@@ -83,14 +83,14 @@ export default function About() {
           <div className="col-lg-3 col-md-6">
             <div className="count-box">
               <i className="bi bi-emoji-smile"></i>
-              <PureCounter end={99} duration={1} /><span className="purecounter">+</span>
+              <PureCounter end={99} duration={1} suffix="+" />
               <p>Klien</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div className="count-box">
               <i className="bi bi-journal-richtext"></i>
-              <PureCounter end={50} duration={1} /><span className="purecounter">+</span>
+              <PureCounter end={50} duration={1} suffix="+" />
               <p>Proyek Selesai</p>
             </div>
           </div>

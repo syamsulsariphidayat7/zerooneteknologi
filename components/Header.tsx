@@ -70,8 +70,11 @@ export default function Header() {
           </a>
         </h1>
         <h2>
-          Mitra teknologi untuk <span>Desa Digital</span> dan Internet Desa
+          Mitra teknologi untuk <span>software, aplikasi, dan solusi digital</span> terpadu
         </h2>
+        <p className="hero-motto" style={{ color: "rgba(255, 255, 255, 0.85)", fontStyle: "italic", marginTop: "12px", letterSpacing: "0.04em" }}>
+          &ldquo;don&apos;t limit yourself&rdquo;
+        </p>
 
         <nav id="navbar" className={`navbar${mobileOpen ? " navbar-mobile" : ""}`}>
           <ul>

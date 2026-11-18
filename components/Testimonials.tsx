@@ -82,7 +82,7 @@ export default function Testimonials() {
                   {item.quote}
                   <i className="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <Image src={item.img} className="testimonial-img" alt="" width={400} height={400} sizes="90px" />
+                <Image src={item.img} className="testimonial-img" alt="" width={90} height={90} sizes="90px" />
                 <h3>{item.name}</h3>
                 <h4>{item.role}</h4>
               </div>

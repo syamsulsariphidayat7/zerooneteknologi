@@ -11,9 +11,11 @@ import { useEffect, useRef, useState } from "react";
 export default function PureCounter({
   end,
   duration = 1,
+  suffix = "",
 }: {
   end: number;
   duration?: number;
+  suffix?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(0);
@@ -47,6 +49,7 @@ export default function PureCounter({
   return (
     <span ref={ref} className="purecounter">
       {value}
+      {suffix}
     </span>
   );
 }
