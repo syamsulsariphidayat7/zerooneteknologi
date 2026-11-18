@@ -106,6 +106,14 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
   dari cermin remote basis `f21f606` (prosedur baru):
   `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
   bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: Label Fokus Bidang "E-Dagang" diganti "Marketplace"
+  (keputusan Syamsul; versi Inggris ikut "Marketplace"). Judul resmi
+  KBLI 62012 tetap memuat "(E-Commerce)" apa adanya.
+  Patch: `your_files/zerooneteknologi-marketplace.patch`.
+- 2026-11-18: Bar progres scroll ditebalkan 5px -> 8px dan warnanya
+  diambil dari LOGO PT (instruksi Syamsul): gradien ungu #97529B ->
+  biru #2BA7CA (sampel piksel berkas logo), rel beraksen ungu samar,
+  glow biru. Patch: `your_files/zerooneteknologi-progres-logo.patch`.
 - 2026-11-18: MULTI-BAHASA ID/EN dengan toggle (permintaan Syamsul,
   ADR 0004): kamus statis `lib/i18n.tsx` (Context, tanpa library,
   tipe EN mengikuti ID — kunci hilang = build gagal); toggle di
