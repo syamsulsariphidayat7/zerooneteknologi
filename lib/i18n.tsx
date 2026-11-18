@@ -73,7 +73,7 @@ const id = {
       "Aplikasi Seluler",
       "IoT & Sensor",
       "CCTV & Keamanan",
-      "E-Dagang",
+      "Marketplace",
     ],
     workTitle: "Cara Kerja",
     steps: [
@@ -285,7 +285,7 @@ const en: Dict = {
       "Mobile Applications",
       "IoT & Sensors",
       "CCTV & Security",
-      "E-Commerce",
+      "Marketplace",
     ],
     workTitle: "How We Work",
     steps: [
