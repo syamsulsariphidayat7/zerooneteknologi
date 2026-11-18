@@ -20,7 +20,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("/assets/img/bg.jpg") top right no-repeat;
+  background: #040404 url("/assets/img/bg-tech.jpg") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -1233,12 +1233,13 @@ section .container {
 # atas putih; isian aksen tetap #18d26e seperti tema gelap.
 --------------------------------------------------------------*/
 html[data-theme="light"] body {
-  background-color: #eef1f4;
+  background-color: #f4f7f5;
   color: #212529;
 }
 
 html[data-theme="light"] body::before {
-  opacity: 0.15;
+  background-image: url("/assets/img/bg-tech-light.jpg");
+  opacity: 1;
 }
 
 html[data-theme="light"] a {
@@ -1531,12 +1532,16 @@ html[data-theme="light"] .credits a:hover {
   .mobile-bottom-nav {
     display: flex;
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
     z-index: 996;
-    background: rgba(0, 0, 0, 0.92);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
     padding-bottom: env(safe-area-inset-bottom);
   }
 
@@ -1583,12 +1588,12 @@ html[data-theme="light"] .credits a:hover {
 
   /* Credits naik ke atas nav bawah agar tidak tertutup */
   .credits {
-    bottom: 58px;
+    bottom: 88px;
   }
 
   /* Ruang ekstra di ujung halaman agar konten terakhir tidak tertutup nav bawah */
   section:last-of-type {
-    padding-bottom: 110px;
+    padding-bottom: 150px;
   }
 }
 
@@ -1606,20 +1611,30 @@ html[data-theme="light"] .mobile-bottom-nav a.active {
 }
 
 
-.scroll-progress {
+.scroll-progress-track {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  z-index: 9998;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  z-index: 9997;
 }
 
-.scroll-progress-bar {
-  height: 100%;
+html[data-theme="light"] .scroll-progress-track {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.scroll-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
   background: linear-gradient(90deg, #18d26e, #35e888);
-  transform: scaleX(0);
+  box-shadow: 0 0 12px rgba(24, 210, 110, 0.55);
   transform-origin: left center;
+  z-index: 9998;
 }
 
 /*--------------------------------------------------------------
@@ -1651,7 +1666,7 @@ html[data-theme="light"] .mobile-bottom-nav a.active {
 @media (max-width: 991px) {
   .whatsapp-float {
     right: 14px;
-    bottom: 106px;
+    bottom: 140px;
     width: 50px;
     height: 50px;
     font-size: 24px;
@@ -1664,8 +1679,9 @@ html[data-theme="light"] .mobile-bottom-nav a.active {
   gap: 8px;
   background: #18d26e;
   color: #fff;
-  padding: 10px 22px;
-  border-radius: 4px;
+  padding: 11px 26px;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(24, 210, 110, 0.28);
   font-weight: 600;
   font-size: 15px;
   transition: background 0.3s;
@@ -1717,5 +1733,176 @@ section.reveal.is-visible {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Poles UI Modern — Sudut Tumpul, Scrollbar Kustom, Kaca
+# Radius: section 22px, kartu 16px, input 12px, tombol pil.
+--------------------------------------------------------------*/
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #18d26e #070807;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070807;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #18d26e, #0e9f5d);
+  border-radius: 8px;
+  border: 2px solid #070807;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #18d26e;
+}
+
+html[data-theme="light"] {
+  scrollbar-color: #18d26e #e8ebee;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #e8ebee;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  border-color: #e8ebee;
+}
+
+section .container {
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="light"] section .container {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.counts .count-box,
+.interests .icon-box,
+.services .icon-box,
+.contact .info-box {
+  border-radius: 16px;
+}
+
+.counts .count-box,
+.interests .icon-box,
+.services .icon-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counts .count-box:hover,
+.interests .icon-box:hover,
+.services .icon-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio .portfolio-wrap {
+  border-radius: 16px;
+}
+
+.about-me .content h3 {
+  letter-spacing: 0.01em;
+}
+
+section .about-me img,
+section .interests .icon-box {
+  border-radius: 16px;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 12px;
+}
+
+.contact .php-email-form button[type="submit"] {
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(24, 210, 110, 0.25);
+}
+
+#header.header-top {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 0 0 18px 18px;
+}
+
+html[data-theme="light"] #header.header-top {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom-color: rgba(0, 0, 0, 0.07);
+}
+
+html[data-theme="light"] .mobile-bottom-nav {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/*--------------------------------------------------------------
+# Spasi Antar Blok Section + Tombol Kembali ke Atas
+--------------------------------------------------------------*/
+section .container {
+  margin-top: 30px;
+}
+
+section .container:first-of-type {
+  margin-top: 0;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 136px;
+  z-index: 997;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(10, 12, 10, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #18d26e;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.back-to-top:hover {
+  background: #18d26e;
+  color: #fff;
+}
+
+html[data-theme="light"] .back-to-top {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0e9f5d;
+}
+
+@media (max-width: 991px) {
+  .back-to-top {
+    right: 17px;
+    bottom: 206px;
+    width: 42px;
+    height: 42px;
   }
 }

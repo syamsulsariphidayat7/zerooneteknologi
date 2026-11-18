@@ -38,6 +38,29 @@ Dimuat via `next/font/google` di `app/layout.tsx`, dirujuk lewat variabel CSS:
 - Section tampil bergantian (class `section-show`), header menyusut jadi `header-top` (tinggi 80px desktop).
 - Jarak bawah section aktif: `padding-bottom: 45px`.
 
+## Radius & Poles UI Modern (2026-11-18)
+
+- Section `.container`: radius 22px, border 1px rgba(255,255,255,.07)
+  (terang: rgba(0,0,0,.06)), bayangan 0 24px 60px rgba(0,0,0,.45).
+- Kartu (count-box, icon-box, info-box, portfolio-wrap): radius 16px;
+  kartu counter/fokus/layanan naik 4px saat hover.
+- Input form: radius 12px. Tombol (PDF, kirim form): pil 999px +
+  bayangan hijau rgba(24,210,110,.25-.28).
+- Header-top: kaca (blur 14px, bg rgba(0,0,0,.82); terang
+  rgba(255,255,255,.85)) + sudut bawah 18px. Nav bawah mobile melayang:
+  inset 12px, radius 20px, blur + bayangan.
+- Scrollbar halaman: 10px, track #070807 (terang #e8ebee), thumb gradien
+  #18d26e -> #0e9f5d radius 8px.
+
+## Background per Tema (2026-11-18)
+
+- Gelap: `bg-tech.jpg` (circuit tipis hijau-cyan + globe jaringan di
+  kanan, basis #040404) opacity penuh di `body::before`.
+- Terang: `bg-tech-light.jpg` — kembaran terang gambar yang sama
+  (basis #f4f7f5, circuit abu-hijau pucat), opacity penuh; warna dasar
+  body terang #f4f7f5 menyamai basis gambar. (Sebelumnya gambar gelap di
+  opacity 0,15 — terasa "numpang", diganti gambar terang khusus.)
+
 ## Tema Terang (toggle, 2026-11-18)
 
 - Bawaan tetap tema gelap asli; mode terang aktif bila `data-theme="light"` di `<html>`,

@@ -65,21 +65,44 @@ export default function About() {
                 </ul>
               </div>
             </div>
-            <p>
-              Visi kami adalah menjadi perusahaan software house, pengadaan jaringan Internet Desa, dan penyedia
-              Aplikasi Desa nomor satu di Indonesia dalam rangka mendukung program pemerintah untuk mewujudkan desa
-              yang maju dan mandiri. Misi kami: membentuk tim strategi, manajemen, dan operasional yang solid;
-              membuat brand Desa Digital berdaya guna; memberikan solusi untuk pelayanan publik yang responsif,
-              transparan, efektif, dan efisien; meningkatkan kemampuan Iptek dan inovasi sebagai pendamping kemajuan
-              desa; serta memberikan layanan internet desa untuk meningkatkan efektivitas dan efisiensi pelayanan desa.
-            </p>
-            <p style={{ marginTop: "20px" }}>
-              <a className="pdf-download-btn" href="/profil-pt-zero-one-teknologi.pdf" download>
-                <i className="bi bi-file-earmark-pdf"></i> Unduh Profil Perusahaan (PDF)
-              </a>
-            </p>
           </div>
         </div>
+      </div>
+
+      {/* ======= Visi & Misi (gabungan section Profil; id="resume" = jangkar lama) ======= */}
+      <div className="resume container" id="resume">
+        <div className="section-title">
+          <h2>Visi &amp; Misi</h2>
+        </div>
+        <div className="row">
+          <div className="col-lg-6">
+            <h3 className="resume-title">Visi</h3>
+            <div className="resume-item">
+              <p>
+                Menjadi perusahaan software house, pengadaan jaringan Internet Desa, dan penyedia Aplikasi Desa nomor
+                satu di Indonesia dalam rangka mendukung program pemerintah untuk mewujudkan desa yang maju dan
+                mandiri.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <h3 className="resume-title">Misi</h3>
+            <div className="resume-item">
+              <ul>
+                <li>Membentuk Tim Strategi, Manajemen, dan Operasional yang solid.</li>
+                <li>Membuat brand Desa Digital berdaya guna sehingga bisa bersaing di kelas dunia.</li>
+                <li>Memberikan solusi dan kemudahan untuk mewujudkan good and clean governance dalam pelayanan publik.</li>
+                <li>Meningkatkan kemampuan Iptek dan inovasi sebagai pendamping kemajuan desa sesuai perkembangan zaman.</li>
+                <li>Memberikan layanan internet desa untuk meningkatkan efektivitas dan efisiensi pelayanan desa.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p style={{ marginTop: "10px" }}>
+          <a className="pdf-download-btn" href="/profil-pt-zero-one-teknologi.pdf" download>
+            <i className="bi bi-file-earmark-pdf"></i> Unduh Profil Perusahaan (PDF)
+          </a>
+        </p>
       </div>
 
       {/* ======= Counts ======= */}
@@ -135,6 +158,47 @@ export default function About() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* ======= Cara Kerja (gabungan section Profil) ======= */}
+      <div className="resume container">
+        <div className="section-title">
+          <h2>Cara Kerja</h2>
+        </div>
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="resume-item">
+              <h4>1. Perencanaan</h4>
+              <p>
+                Pengumpulan dan analisis data serta kebutuhan, termasuk penentuan nama domain dan jenis website atau
+                aplikasi yang akan dibangun — statis atau dinamis.
+              </p>
+            </div>
+            <div className="resume-item">
+              <h4>2. Pembuatan</h4>
+              <p>
+                Pembuatan halaman dan aplikasi berdasarkan data yang diperoleh: penataan tata letak, struktur, dan
+                navigasi penyajian informasi.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="resume-item">
+              <h4>3. Implementasi</h4>
+              <p>
+                Hasil pembuatan ditempatkan pada server yang terhubung ke internet sehingga dapat dikunjungi dan
+                digunakan oleh pengguna.
+              </p>
+            </div>
+            <div className="resume-item">
+              <h4>4. Maintenance</h4>
+              <p>
+                Perawatan dan pembaruan berkala agar informasi tetap aktual — halaman dan aplikasi diawasi,
+                dikembangkan, dan diperbarui sesuai kebutuhan.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

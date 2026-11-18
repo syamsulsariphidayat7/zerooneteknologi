@@ -13,7 +13,10 @@ Halaman 10 PDF profil berupa gambar (tidak terbaca sebagai teks).
   dengan moto ditampilkan di bawahnya.
 - Tentang: perusahaan TI fokus pengembangan sistem informasi, internet, dan
   telekomunikasi; spesialisasi Desa Digital & Internet Desa.
-- Visi & misi: diringkas dari proposal 2022 (5 poin misi utuh di section Profil).
+- Visi & misi: diringkas dari proposal 2022 (5 poin misi utuh di blok Visi & Misi
+  section Tentang — sejak 2026-11-18 section Profil DIGABUNG ke Tentang:
+  urutan blok Tentang = intro/info, Visi & Misi (jangkar id="resume"),
+  tombol PDF, counter, KBLI, Fokus Bidang, Cara Kerja, Tim; menu Profil dihapus).
 - Counter: 99+ klien, 50+ proyek (klaim profil perusahaan), 6 bidang usaha
   KBLI, 6 layanan utama.
 - Layanan (6): Desa Digital, Internet Desa, Software House, Pembuatan Website,

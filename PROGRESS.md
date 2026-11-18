@@ -106,6 +106,35 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
   dari cermin remote basis `f21f606` (prosedur baru):
   `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
   bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: Mode terang dapat background SENDIRI (keluhan Syamsul: bg
+  abu "berasa numpang"): bg-tech-light.jpg — kembaran terang bg-tech
+  (komposisi sama, basis #f4f7f5); body::before terang menukar gambar +
+  opacity penuh, warna dasar body terang disamakan #f4f7f5. Mode gelap
+  tidak berubah. Patch: `your_files/zerooneteknologi-bg-terang.patch`,
+  basis = pasca bg-tech.
+- 2026-11-18: Background diganti (instruksi Syamsul): foto bawaan template
+  (bg.jpg) -> gambar vibes teknologi & network (bg-tech.jpg, digenerate:
+  circuit tipis hijau-cyan di kanan + globe jaringan redup, kiri kosong
+  gelap). Referensi di body::before; tema terang tetap opacity 0,15.
+  Patch: `your_files/zerooneteknologi-bg-tech.patch`, basis = pasca bar-spasi-top.
+- 2026-11-18: Koreksi dari screenshot Syamsul: (1) "bar scroll" yang
+  dimaksud = bar progres di ATAS — dibuat tegas (5px + rel samar + glow);
+  (2) blok-blok di Tentang terlalu rapat sejak jadi kotak — diberi jarak
+  antar container 30px; (3) tombol kembali ke atas (muncul setelah scroll
+  600px, bertumpuk di atas tombol WA). Patch:
+  `your_files/zerooneteknologi-bar-spasi-top.patch`, basis = pasca poles-ui.
+- 2026-11-18: Poles UI modern (disetujui dari preview gambar): scrollbar
+  halaman kustom gradien hijau, section radius 22px + border/bayangan,
+  kartu 16px + hover naik, tombol pil, input 12px, header-top kaca blur +
+  sudut bawah tumpul, nav bawah mobile MELAYANG (credits/WA/padding
+  menyesuaikan). Token dicatat di docs/design-tokens.md. Patch:
+  `your_files/zerooneteknologi-poles-ui.patch`, basis = pasca gabung-section.
+- 2026-11-18: Section Tentang + Profil DIGABUNG jadi satu section (instruksi
+  Syamsul): blok Visi & Misi + Cara Kerja dari Resume pindah ke About
+  (paragraf visi-misi dobel di About dibuang; blok Visi & Misi membawa
+  id="resume" sebagai jangkar link lama), Resume.tsx dihapus, menu Profil
+  hilang (nav 5 item). Patch: `your_files/zerooneteknologi-gabung-section.patch`,
+  basis remote `49f3c3a`.
 - 2026-11-18: KOREKSI MODEL SCROLL atas klarifikasi Syamsul: tafsir "kotak
   section scroll internal" SALAH — yang dimaksud SATU HALAMAN PANJANG:
   semua section menumpuk, scroll halaman biasa, efek muncul tiap section

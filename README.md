@@ -89,9 +89,9 @@ app/
   api/contact/route.ts     # pengganti contact.php
 components/
   Header.tsx  About.tsx  Skills.tsx  Testimonials.tsx  PureCounter.tsx
-  Resume.tsx  Services.tsx  Portfolio.tsx  Contact.tsx  Credits.tsx
+  Services.tsx  Portfolio.tsx  Contact.tsx  Credits.tsx
   PortfolioDetailsContent.tsx  ScrollProgress.tsx  WhatsAppFloat.tsx
-  RevealOnScroll.tsx
+  RevealOnScroll.tsx  BackToTop.tsx
 public/assets/img/         # semua gambar template asli
 ```
 

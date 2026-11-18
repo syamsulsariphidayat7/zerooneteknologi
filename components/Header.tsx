@@ -5,7 +5,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const NAV_LINKS = [
   { hash: "#header", label: "Beranda", icon: "bi-house" },
   { hash: "#about", label: "Tentang", icon: "bi-info-circle" },
-  { hash: "#resume", label: "Profil", icon: "bi-person" },
   { hash: "#services", label: "Layanan", icon: "bi-grid" },
   { hash: "#portfolio", label: "Portfolio", icon: "bi-briefcase" },
   { hash: "#contact", label: "Kontak", icon: "bi-envelope" },

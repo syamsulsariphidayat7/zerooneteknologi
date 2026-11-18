@@ -31,10 +31,11 @@ export default function ScrollProgress() {
   }, []);
 
   return (
-    <div
-      className="scroll-progress"
-      style={{ transform: `scaleX(${progress})` }}
-      aria-hidden="true"
-    />
+    <div className="scroll-progress-track" aria-hidden="true">
+      <div
+        className="scroll-progress"
+        style={{ transform: `scaleX(${progress})` }}
+      />
+    </div>
   );
 }
