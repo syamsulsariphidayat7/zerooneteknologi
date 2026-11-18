@@ -36,12 +36,12 @@ body::before {
 }
 
 a {
-  color: #18d26e;
+  color: #2ba7ca;
   text-decoration: none;
 }
 
 a:hover {
-  color: #35e888;
+  color: #75c6dd;
   text-decoration: none;
 }
 
@@ -95,7 +95,7 @@ h6 {
 
 #header h2 span {
   color: #fff;
-  border-bottom: 2px solid #18d26e;
+  border-bottom: 2px solid #2ba7ca;
   padding-bottom: 6px;
 }
 
@@ -124,7 +124,7 @@ h6 {
 }
 
 #header .social-links a:hover {
-  background: #18d26e;
+  background: #2ba7ca;
 }
 
 @media (max-width: 992px) {
@@ -185,8 +185,8 @@ h6 {
 }
 
 .theme-toggle:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: #2ba7ca;
+  border-color: #2ba7ca;
   color: #fff;
 }
 
@@ -282,7 +282,7 @@ h6 {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #18d26e;
+  background-color: #2ba7ca;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -446,7 +446,7 @@ section .container {
 .about-me .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #18d26e;
+  color: #2ba7ca;
 }
 
 .about-me .content ul {
@@ -467,7 +467,7 @@ section .container {
 .about-me .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #18d26e;
+  color: #2ba7ca;
   line-height: 0;
 }
 
@@ -498,7 +498,7 @@ section .container {
   font-size: 24px;
   background: rgba(255, 255, 255, 0.1);
   padding: 12px;
-  color: #18d26e;
+  color: #2ba7ca;
   border-radius: 50px;
   line-height: 0;
 }
@@ -550,7 +550,7 @@ section .container {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #18d26e;
+  background-color: #2ba7ca;
 }
 
 /*--------------------------------------------------------------
@@ -663,7 +663,7 @@ section .container {
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #18d26e;
+  background-color: #2ba7ca;
 }
 
 /*--------------------------------------------------------------
@@ -690,7 +690,7 @@ section .container {
   font-weight: 600;
   text-transform: uppercase;
   font-family: var(--font-poppins), "Poppins", sans-serif;
-  color: #18d26e;
+  color: #2ba7ca;
   margin-bottom: 10px;
 }
 
@@ -723,8 +723,8 @@ section .container {
   border-radius: 50px;
   left: -9px;
   top: 0;
-  background: #18d26e;
-  border: 2px solid #18d26e;
+  background: #2ba7ca;
+  border: 2px solid #2ba7ca;
 }
 
 /*--------------------------------------------------------------
@@ -741,7 +741,7 @@ section .container {
   margin: 0 auto;
   width: 64px;
   height: 64px;
-  background: #18d26e;
+  background: #2ba7ca;
   border-radius: 5px;
   transition: all 0.3s ease-out 0s;
   display: flex;
@@ -786,8 +786,8 @@ section .container {
 }
 
 .services .icon-box:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: #2ba7ca;
+  border-color: #2ba7ca;
 }
 
 .services .icon-box:hover .icon {
@@ -795,11 +795,11 @@ section .container {
 }
 
 .services .icon-box:hover .icon i {
-  color: #18d26e;
+  color: #2ba7ca;
 }
 
 .services .icon-box:hover .icon::before {
-  background: #35e888;
+  background: #75c6dd;
 }
 
 .services .icon-box:hover h4 a,
@@ -840,7 +840,7 @@ section .container {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  background: #18d26e;
+  background: #2ba7ca;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -1034,7 +1034,7 @@ section .container {
 }
 
 .portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #18d26e;
+  background-color: #2ba7ca;
 }
 
 /*--------------------------------------------------------------
@@ -1049,7 +1049,7 @@ section .container {
 
 .contact .info-box i.bx {
   font-size: 24px;
-  color: #18d26e;
+  color: #2ba7ca;
   border-radius: 50%;
   padding: 14px;
   float: left;
@@ -1086,7 +1086,7 @@ section .container {
 }
 
 .contact .info-box .social-links a:hover {
-  color: #18d26e;
+  color: #2ba7ca;
 }
 
 .contact .php-email-form {
@@ -1110,7 +1110,7 @@ section .container {
 .contact .php-email-form .sent-message {
   display: none;
   background: rgba(255, 255, 255, 0.08);
-  background: #18d26e;
+  background: #2ba7ca;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1130,7 +1130,7 @@ section .container {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  border: 3px solid #2ba7ca;
   border-top-color: #eee;
   animation: animate-loading 1s linear infinite;
 }
@@ -1172,7 +1172,7 @@ section .container {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #18d26e;
+  background: #2ba7ca;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -1218,7 +1218,7 @@ section .container {
 }
 
 .credits a {
-  color: #18d26e;
+  color: #2ba7ca;
   transition: 0.3s;
 }
 
@@ -1229,8 +1229,8 @@ section .container {
 # Tema Terang (data-theme="light" di <html>)
 # Bawaan tetap tema gelap asli template; blok ini hanya menimpa
 # permukaan & teks saat pengunjung memilih mode terang.
-# Aksen teks memakai hijau lebih gelap (#0e9f5d) demi kontras di
-# atas putih; isian aksen tetap #18d26e seperti tema gelap.
+# Aksen teks memakai hijau lebih gelap (#207d98) demi kontras di
+# atas putih; isian aksen tetap #2ba7ca seperti tema gelap.
 --------------------------------------------------------------*/
 html[data-theme="light"] body {
   background-color: #f4f7f5;
@@ -1243,7 +1243,7 @@ html[data-theme="light"] body::before {
 }
 
 html[data-theme="light"] a {
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 html[data-theme="light"] a:hover {
@@ -1273,7 +1273,7 @@ html[data-theme="light"] #header .social-links a {
 }
 
 html[data-theme="light"] #header .social-links a:hover {
-  background: #18d26e;
+  background: #2ba7ca;
   color: #fff;
 }
 
@@ -1313,8 +1313,8 @@ html[data-theme="light"] .theme-toggle {
 }
 
 html[data-theme="light"] .theme-toggle:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: #2ba7ca;
+  border-color: #2ba7ca;
   color: #fff;
 }
 
@@ -1332,7 +1332,7 @@ html[data-theme="light"] .section-title p {
 }
 
 html[data-theme="light"] .about-me .content h3 {
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 html[data-theme="light"] .counts .count-box {
@@ -1342,7 +1342,7 @@ html[data-theme="light"] .counts .count-box {
 
 html[data-theme="light"] .counts .count-box i {
   background: #e8f9f0;
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 html[data-theme="light"] .counts .count-box span {
@@ -1404,7 +1404,7 @@ html[data-theme="light"] .resume .resume-item {
 }
 
 html[data-theme="light"] .resume .resume-item h4 {
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 html[data-theme="light"] .resume .resume-item h5 {
@@ -1435,7 +1435,7 @@ html[data-theme="light"] .portfolio #portfolio-flters li {
 
 html[data-theme="light"] .portfolio #portfolio-flters li:hover,
 html[data-theme="light"] .portfolio #portfolio-flters li.filter-active {
-  background: #18d26e;
+  background: #2ba7ca;
   color: #fff;
 }
 
@@ -1454,7 +1454,7 @@ html[data-theme="light"] .contact .info-box {
 
 html[data-theme="light"] .contact .info-box i.bx {
   background: #e8f9f0;
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 html[data-theme="light"] .contact .info-box h3 {
@@ -1470,7 +1470,7 @@ html[data-theme="light"] .contact .info-box .social-links a {
 }
 
 html[data-theme="light"] .contact .info-box .social-links a:hover {
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 html[data-theme="light"] .contact .php-email-form {
@@ -1492,7 +1492,7 @@ html[data-theme="light"] .contact .php-email-form textarea {
 html[data-theme="light"] .contact .php-email-form input:focus,
 html[data-theme="light"] .contact .php-email-form textarea:focus {
   background-color: #ffffff;
-  border-color: #18d26e;
+  border-color: #2ba7ca;
 }
 
 html[data-theme="light"] .contact .php-email-form input::-moz-placeholder,
@@ -1510,7 +1510,7 @@ html[data-theme="light"] .credits {
 }
 
 html[data-theme="light"] .credits a:hover {
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 @media (max-width: 992px) {
@@ -1563,7 +1563,7 @@ html[data-theme="light"] .credits a:hover {
   }
 
   .mobile-bottom-nav a.active {
-    color: #18d26e;
+    color: #2ba7ca;
   }
 
   /* Tombol tema: ikon saja, fixed di pojok kanan atas */
@@ -1607,7 +1607,7 @@ html[data-theme="light"] .mobile-bottom-nav a {
 }
 
 html[data-theme="light"] .mobile-bottom-nav a.active {
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 
@@ -1679,11 +1679,11 @@ html[data-theme="light"] .scroll-progress-track {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #18d26e;
+  background: #2ba7ca;
   color: #fff;
   padding: 11px 26px;
   border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(24, 210, 110, 0.28);
+  box-shadow: 0 10px 24px rgba(43, 167, 202, 0.28);
   font-weight: 600;
   font-size: 15px;
   transition: background 0.3s;
@@ -1792,7 +1792,7 @@ section .interests .icon-box {
 
 .contact .php-email-form button[type="submit"] {
   border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(24, 210, 110, 0.25);
+  box-shadow: 0 10px 24px rgba(43, 167, 202, 0.25);
 }
 
 #header.header-top {
@@ -1836,7 +1836,7 @@ section .container:first-of-type {
   background: rgba(10, 12, 10, 0.82);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: #18d26e;
+  color: #2ba7ca;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -1855,14 +1855,14 @@ section .container:first-of-type {
 }
 
 .back-to-top:hover {
-  background: #18d26e;
+  background: #2ba7ca;
   color: #fff;
 }
 
 html[data-theme="light"] .back-to-top {
   background: rgba(255, 255, 255, 0.88);
   border-color: rgba(0, 0, 0, 0.1);
-  color: #0e9f5d;
+  color: #207d98;
 }
 
 @media (max-width: 991px) {
@@ -1899,8 +1899,8 @@ section#portfolio .container {
 
 section#contact .container {
   background-image:
-    radial-gradient(480px 300px at 10% -6%, rgba(24, 210, 110, 0.12), transparent 70%),
-    radial-gradient(420px 280px at 96% 108%, rgba(24, 210, 110, 0.08), transparent 70%),
+    radial-gradient(480px 300px at 10% -6%, rgba(43, 167, 202, 0.12), transparent 70%),
+    radial-gradient(420px 280px at 96% 108%, rgba(43, 167, 202, 0.08), transparent 70%),
     linear-gradient(rgba(53, 232, 136, 0.75), rgba(53, 232, 136, 0.75)),
     linear-gradient(rgba(53, 232, 136, 0.75), rgba(53, 232, 136, 0.75));
   background-size: auto, auto, 5px 62px, 5px 46px;
@@ -1937,7 +1937,7 @@ html[data-theme="light"] section#contact .container {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(24, 210, 110, 0.10) 0%, rgba(24, 210, 110, 0) 42%, rgba(0, 0, 0, 0.42) 100%);
+  background: linear-gradient(180deg, rgba(43, 167, 202, 0.10) 0%, rgba(43, 167, 202, 0) 42%, rgba(0, 0, 0, 0.42) 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -1956,7 +1956,7 @@ html[data-theme="light"] #header::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #18d26e, #0b8a52);
+  background: linear-gradient(135deg, #2ba7ca, #0b8a52);
   color: #fff;
   font-size: 28px;
   font-weight: 700;
@@ -1977,7 +1977,7 @@ html[data-theme="light"] #header::before {
   left: -90px;
   bottom: -110px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(24, 210, 110, 0.20), rgba(24, 210, 110, 0) 65%);
+  background: radial-gradient(circle, rgba(43, 167, 202, 0.20), rgba(43, 167, 202, 0) 65%);
   pointer-events: none;
   z-index: 0;
   animation: orbFloat 11s ease-in-out infinite alternate;
@@ -2028,7 +2028,7 @@ html[data-theme="light"] #header::after {
   bottom: -4px;
   height: 2px;
   width: 100%;
-  background: #18d26e;
+  background: #2ba7ca;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s ease;
@@ -2057,8 +2057,8 @@ html[data-theme="light"] #header::after {
    teksnya jadi putih — teks hilang. Samakan dengan mode gelap:
    kartu hijau penuh saat hover. */
 html[data-theme="light"] .services .icon-box:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: #2ba7ca;
+  border-color: #2ba7ca;
 }
 
 html[data-theme="light"] .services .icon-box:hover p {
@@ -2066,7 +2066,7 @@ html[data-theme="light"] .services .icon-box:hover p {
 }
 
 html[data-theme="light"] .services .icon-box:hover .icon::before {
-  background: #35e888;
+  background: #75c6dd;
 }
 
 /*--------------------------------------------------------------
@@ -2101,8 +2101,8 @@ section .container,
 }
 
 .lang-toggle:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: #2ba7ca;
+  border-color: #2ba7ca;
   color: #fff;
 }
 
@@ -2127,8 +2127,8 @@ html[data-theme="light"] .lang-toggle {
 }
 
 html[data-theme="light"] .lang-toggle:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: #2ba7ca;
+  border-color: #2ba7ca;
   color: #fff;
 }
 
@@ -2154,5 +2154,29 @@ html[data-theme="light"] .lang-toggle:hover {
 
   #header .lang-toggle .lang-toggle-code {
     display: inline;
+  }
+}
+
+/* Kemunculan bar nav (header-top) dibuat halus (2026-11-18):
+   bar meluncur turun + memudar masuk, bukan muncul seketika. */
+@keyframes headerTopIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#header.header-top {
+  animation: headerTopIn 0.35s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header.header-top {
+    animation: none;
   }
 }

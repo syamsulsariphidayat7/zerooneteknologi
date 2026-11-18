@@ -106,6 +106,19 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
   dari cermin remote basis `f21f606` (prosedur baru):
   `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
   bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: Kemunculan bar nav dibuat halus: header-top kini
+  meluncur turun + memudar masuk (animasi headerTopIn 0,35 dtk)
+  saat scroll memasuki section Tentang, bukan muncul seketika;
+  dimatikan saat prefers-reduced-motion. Satu patch dengan aksen
+  logo di bawah.
+- 2026-11-18: AKSEN TEMA diganti dari hijau template ke warna LOGO
+  (instruksi Syamsul): #18d26e -> #2BA7CA (biru logo), #35E888 ->
+  #75C6DD (pendamping terang), #0E9F5D -> #207D98 (pendamping gelap
+  mode terang), rgba(24,210,110) -> rgba(43,167,202). Total 65 titik
+  di globals.css. Hijau yang SENGAJA dipertahankan: tombol WhatsApp
+  #25D366 (warna merek WhatsApp) dan corak sirkuit pada gambar latar
+  bg-tech (gambar, bukan CSS). Patch:
+  `your_files/zerooneteknologi-aksen-logo.patch`, basis = `6a20767`.
 - 2026-11-18: Bar progres ditipiskan lagi 8px -> 3px (instruksi
   Syamsul: "tipis aja asal terlihat") dan rel dasarnya diganti
   transisi gradien warna logo versi samar (isi bar tetap gradien

@@ -9,7 +9,7 @@ Sumber kebenarannya tetap `app/globals.css` — dokumen ini ringkasannya agar ko
 | Token | Nilai | Pemakaian |
 |---|---|---|
 | Background | `#040404` | Latar body + gambar `bg.jpg` |
-| Aksen utama | `#18d26e` | Link, ikon, progress bar, tombol kirim, aksen section |
+| Aksen utama | `#2ba7ca` | Link, ikon, progress bar, tombol kirim, aksen section |
 | Aksen hover | `#35e888` | Hover link |
 | Turunan aksen | `#15bb62`, `#4ceb95`, `#63eda3` | Hover tombol, state sukses form |
 | Teks utama | `#ffffff` | Teks di atas latar gelap |
