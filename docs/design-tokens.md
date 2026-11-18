@@ -37,3 +37,13 @@ Dimuat via `next/font/google` di `app/layout.tsx`, dirujuk lewat variabel CSS:
 - Grid: Bootstrap 5 (`.container`, `.row`, kolom `lg/md`) — tidak ada spacing scale kustom.
 - Section tampil bergantian (class `section-show`), header menyusut jadi `header-top` (tinggi 80px desktop).
 - Jarak bawah section aktif: `padding-bottom: 45px`.
+
+## Tema Terang (toggle, 2026-11-18)
+
+- Bawaan tetap tema gelap asli; mode terang aktif bila `data-theme="light"` di `<html>`,
+  dipilih lewat tombol `.theme-toggle` di header, disimpan di `localStorage` (`zo-theme`),
+  dan dipasang sebelum render oleh script inline di `app/layout.tsx` (anti-kedip).
+- Override terpusat di blok akhir `app/globals.css` — tidak ada perubahan pada aturan gelap.
+- Token terang: latar halaman `#eef1f4`, permukaan kartu `#ffffff`, garis `#e6e9ee`,
+  teks `#212529`, judul `#111418`, teks aksen `#0e9f5d` (kontras di atas putih),
+  isian aksen tetap `#18d26e`; foto latar hero tampil samar (opacity 0.15).

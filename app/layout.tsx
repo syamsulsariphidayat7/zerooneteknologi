@@ -48,8 +48,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="id" className={`${openSans.variable} ${raleway.variable} ${poppins.variable}`}>
-      <body>{children}</body>
+    <html lang="id" suppressHydrationWarning className={`${openSans.variable} ${raleway.variable} ${poppins.variable}`}>
+      <body>
+        {/* Tema terang/gelap: terapkan pilihan tersimpan sebelum konten tampil
+            (anti-kedip). Bawaan = gelap (tema asli template). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("zo-theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;}}catch(e){}`,
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

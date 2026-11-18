@@ -164,6 +164,40 @@ h6 {
   display: none;
 }
 
+#header .hero-motto {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Tombol ganti tema terang/gelap */
+.theme-toggle {
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #18d26e;
+  border-color: #18d26e;
+  color: #fff;
+}
+
+#header.header-top .theme-toggle {
+  margin-top: 0;
+  margin-left: 24px;
+  padding: 6px 14px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
 #header.header-top h1 {
   margin-right: auto;
   font-size: 36px;
@@ -1190,4 +1224,383 @@ section .container {
 
 .credits a:hover {
   color: #fff;
+}
+/*--------------------------------------------------------------
+# Tema Terang (data-theme="light" di <html>)
+# Bawaan tetap tema gelap asli template; blok ini hanya menimpa
+# permukaan & teks saat pengunjung memilih mode terang.
+# Aksen teks memakai hijau lebih gelap (#0e9f5d) demi kontras di
+# atas putih; isian aksen tetap #18d26e seperti tema gelap.
+--------------------------------------------------------------*/
+html[data-theme="light"] body {
+  background-color: #eef1f4;
+  color: #212529;
+}
+
+html[data-theme="light"] body::before {
+  opacity: 0.15;
+}
+
+html[data-theme="light"] a {
+  color: #0e9f5d;
+}
+
+html[data-theme="light"] a:hover {
+  color: #0b7a47;
+}
+
+html[data-theme="light"] #header h1 a,
+html[data-theme="light"] #header h1 a:hover {
+  color: #111418;
+}
+
+html[data-theme="light"] #header h2 {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+html[data-theme="light"] #header h2 span {
+  color: #111418;
+}
+
+html[data-theme="light"] #header .hero-motto {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+html[data-theme="light"] #header .social-links a {
+  background: rgba(0, 0, 0, 0.06);
+  color: #212529;
+}
+
+html[data-theme="light"] #header .social-links a:hover {
+  background: #18d26e;
+  color: #fff;
+}
+
+html[data-theme="light"] #header.header-top {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .navbar a,
+html[data-theme="light"] .navbar a:focus {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+html[data-theme="light"] .navbar a:hover,
+html[data-theme="light"] .navbar .active,
+html[data-theme="light"] .navbar .active:focus,
+html[data-theme="light"] .navbar li:hover>a {
+  color: #111418;
+}
+
+html[data-theme="light"] .mobile-nav-toggle {
+  color: #212529;
+}
+
+html[data-theme="light"] .navbar-mobile {
+  background: rgba(255, 255, 255, 0.97);
+}
+
+html[data-theme="light"] .navbar-mobile ul {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="light"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  color: #212529;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="light"] .theme-toggle:hover {
+  background: #18d26e;
+  border-color: #18d26e;
+  color: #fff;
+}
+
+html[data-theme="light"] section .container {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .section-title h2 {
+  color: #8a8f98;
+}
+
+html[data-theme="light"] .section-title p {
+  color: #111418;
+}
+
+html[data-theme="light"] .about-me .content h3 {
+  color: #0e9f5d;
+}
+
+html[data-theme="light"] .counts .count-box {
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+}
+
+html[data-theme="light"] .counts .count-box i {
+  background: #e8f9f0;
+  color: #0e9f5d;
+}
+
+html[data-theme="light"] .counts .count-box span {
+  color: #111418;
+}
+
+html[data-theme="light"] .skills .progress .skill {
+  color: #212529;
+}
+
+html[data-theme="light"] .skills .progress-bar-wrap {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .interests .icon-box {
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+}
+
+html[data-theme="light"] .interests .icon-box h3 {
+  color: #212529;
+}
+
+html[data-theme="light"] .interests .icon-box:hover {
+  background: #f0f2f5;
+}
+
+html[data-theme="light"] .testimonials .testimonial-item p {
+  background: #eef1f4;
+}
+
+html[data-theme="light"] .testimonials .testimonial-item h3 {
+  color: #111418;
+}
+
+html[data-theme="light"] .testimonials .testimonial-item h4 {
+  color: #6c757d;
+}
+
+html[data-theme="light"] .testimonials .testimonial-item .testimonial-img {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .testimonials .testimonial-item .quote-icon-left,
+html[data-theme="light"] .testimonials .testimonial-item .quote-icon-right {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="light"] .testimonials .swiper-pagination .swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="light"] .resume .resume-title {
+  color: #111418;
+}
+
+html[data-theme="light"] .resume .resume-item {
+  border-left-color: rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .resume .resume-item h4 {
+  color: #0e9f5d;
+}
+
+html[data-theme="light"] .resume .resume-item h5 {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .services .icon-box {
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+}
+
+html[data-theme="light"] .services .icon-box h4 a {
+  color: #111418;
+}
+
+html[data-theme="light"] .services .icon-box .icon::before {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .services .icon-box:hover h4 a {
+  color: #fff;
+}
+
+html[data-theme="light"] .portfolio #portfolio-flters li {
+  color: #212529;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .portfolio #portfolio-flters li:hover,
+html[data-theme="light"] .portfolio #portfolio-flters li.filter-active {
+  background: #18d26e;
+  color: #fff;
+}
+
+html[data-theme="light"] .portfolio-details {
+  background: rgba(245, 246, 248, 0.97);
+}
+
+html[data-theme="light"] .portfolio-details .swiper-pagination .swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="light"] .contact .info-box {
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+}
+
+html[data-theme="light"] .contact .info-box i.bx {
+  background: #e8f9f0;
+  color: #0e9f5d;
+}
+
+html[data-theme="light"] .contact .info-box h3 {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="light"] .contact .info-box p {
+  color: #212529;
+}
+
+html[data-theme="light"] .contact .info-box .social-links a {
+  color: #212529;
+}
+
+html[data-theme="light"] .contact .info-box .social-links a:hover {
+  color: #0e9f5d;
+}
+
+html[data-theme="light"] .contact .php-email-form {
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+}
+
+html[data-theme="light"] .contact .php-email-form .loading {
+  background: #f4f6f8;
+}
+
+html[data-theme="light"] .contact .php-email-form input,
+html[data-theme="light"] .contact .php-email-form textarea {
+  background: #f4f6f8;
+  border: 1px solid #dde2e8;
+  color: #212529;
+}
+
+html[data-theme="light"] .contact .php-email-form input:focus,
+html[data-theme="light"] .contact .php-email-form textarea:focus {
+  background-color: #ffffff;
+  border-color: #18d26e;
+}
+
+html[data-theme="light"] .contact .php-email-form input::-moz-placeholder,
+html[data-theme="light"] .contact .php-email-form textarea::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="light"] .contact .php-email-form input::placeholder,
+html[data-theme="light"] .contact .php-email-form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="light"] .credits {
+  color: #212529;
+}
+
+html[data-theme="light"] .credits a:hover {
+  color: #0e9f5d;
+}
+
+@media (max-width: 992px) {
+  html[data-theme="light"] .credits {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigasi Bawah Mobile + Toggle Tema di Pojok Kanan Atas
+# (≤991px: hamburger diganti nav bawah; tombol tema jadi ikon
+# fixed di bekas posisi hamburger. Desktop tidak berubah.)
+--------------------------------------------------------------*/
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 996;
+    background: rgba(0, 0, 0, 0.92);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .mobile-bottom-nav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 0 7px;
+    font-size: 10px;
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .mobile-bottom-nav a i {
+    font-size: 19px;
+    line-height: 1;
+  }
+
+  .mobile-bottom-nav a.active {
+    color: #18d26e;
+  }
+
+  /* Tombol tema: ikon saja, fixed di pojok kanan atas */
+  #header .theme-toggle,
+  #header.header-top .theme-toggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 998;
+    margin: 0;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 17px;
+  }
+
+  #header .theme-toggle .theme-toggle-label {
+    display: none;
+  }
+
+  /* Credits naik ke atas nav bawah agar tidak tertutup */
+  .credits {
+    bottom: 58px;
+  }
+
+  /* Ruang ekstra di ujung section agar konten terakhir tidak tertutup nav bawah */
+  section.section-show {
+    padding-bottom: 110px;
+  }
+}
+
+html[data-theme="light"] .mobile-bottom-nav {
+  background: rgba(255, 255, 255, 0.96);
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .mobile-bottom-nav a {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="light"] .mobile-bottom-nav a.active {
+  color: #0e9f5d;
 }
