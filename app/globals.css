@@ -1616,13 +1616,14 @@ html[data-theme="light"] .mobile-bottom-nav a.active {
   top: 0;
   left: 0;
   right: 0;
-  height: 8px;
-  background: rgba(151, 82, 155, 0.18);
+  height: 3px;
+  /* Rel dasar: transisi gradien warna logo versi samar */
+  background: linear-gradient(90deg, rgba(151, 82, 155, 0.25), rgba(43, 167, 202, 0.25));
   z-index: 9997;
 }
 
 html[data-theme="light"] .scroll-progress-track {
-  background: rgba(151, 82, 155, 0.15);
+  background: linear-gradient(90deg, rgba(151, 82, 155, 0.18), rgba(43, 167, 202, 0.18));
 }
 
 .scroll-progress {
@@ -1630,7 +1631,7 @@ html[data-theme="light"] .scroll-progress-track {
   top: 0;
   left: 0;
   right: 0;
-  height: 8px;
+  height: 3px;
   /* Gradien dari logo PT: ungu #97529B -> biru #2BA7CA (sampel piksel logo) */
   background: linear-gradient(90deg, #97529b, #6579b1, #2ba7ca);
   box-shadow: 0 0 12px rgba(43, 167, 202, 0.55);

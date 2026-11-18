@@ -106,6 +106,11 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
   dari cermin remote basis `f21f606` (prosedur baru):
   `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
   bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: Bar progres ditipiskan lagi 8px -> 3px (instruksi
+  Syamsul: "tipis aja asal terlihat") dan rel dasarnya diganti
+  transisi gradien warna logo versi samar (isi bar tetap gradien
+  logo penuh). Patch: `your_files/zerooneteknologi-progres-tipis.patch`,
+  basis = `26f8034`.
 - 2026-11-18: Label Fokus Bidang "E-Dagang" diganti "Marketplace"
   (keputusan Syamsul; versi Inggris ikut "Marketplace"). Judul resmi
   KBLI 62012 tetap memuat "(E-Commerce)" apa adanya.
