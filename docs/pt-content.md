@@ -8,6 +8,9 @@ Halaman 10 PDF profil berupa gambar (tidak terbaca sebagai teks).
 ## Dipakai di web
 
 - Identitas: PT Zero One Teknologi, motto "don't limit yourself".
+- Tagline hero (digeneralisasi sesuai KBLI, keputusan pemilik 2026-11-18):
+  "Mitra teknologi untuk software, aplikasi, dan solusi digital terpadu",
+  dengan moto ditampilkan di bawahnya.
 - Tentang: perusahaan TI fokus pengembangan sistem informasi, internet, dan
   telekomunikasi; spesialisasi Desa Digital & Internet Desa.
 - Visi & misi: diringkas dari proposal 2022 (5 poin misi utuh di section Profil).

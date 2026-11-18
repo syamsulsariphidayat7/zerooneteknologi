@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const NAV_LINKS = [
   { hash: "#header", label: "Beranda", icon: "bi-house" },
@@ -12,13 +12,19 @@ const NAV_LINKS = [
 ];
 
 /**
- * Header + navigasi — port dari logika di assets/js/main.js asli:
- * klik nav-link menampilkan section terkait (class `section-show`),
- * header menyusut jadi `header-top`, dan hash awal saat load dihormati.
+ * Header + navigasi — model SATU HALAMAN PANJANG (ADR 0003):
+ * semua section menumpuk; klik nav = scroll halus ke section tujuan,
+ * link aktif mengikuti posisi scroll (scrollspy), dan header menyusut
+ * jadi bar `header-top` (fixed) begitu hero terlewati — spacer setinggi
+ * hero menjaga halaman tidak melompat saat header keluar dari alur.
  */
 export default function Header() {
   const [active, setActive] = useState("#header");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [topBar, setTopBar] = useState(false);
+  const [heroH, setHeroH] = useState(0);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const heroHRef = useRef(0);
 
   // Sinkron dengan atribut data-theme yang dipasang script di layout
   useEffect(() => {
@@ -37,110 +43,137 @@ export default function Header() {
     }
   }, [theme]);
 
-  const showSection = useCallback((hash: string) => {
-    const header = document.querySelector("#header");
-    const sections = document.querySelectorAll("section");
-    const section = document.querySelector(hash);
-    if (!header || !section) return;
-
+  const goTo = useCallback((hash: string) => {
     setActive(hash);
-
     if (hash === "#header") {
-      header.classList.remove("header-top");
-      sections.forEach((item) => item.classList.remove("section-show"));
       window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    if (!header.classList.contains("header-top")) {
-      header.classList.add("header-top");
-      setTimeout(() => {
-        sections.forEach((item) => item.classList.remove("section-show"));
-        section.classList.add("section-show");
-      }, 350);
     } else {
-      sections.forEach((item) => item.classList.remove("section-show"));
-      section.classList.add("section-show");
+      document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
     }
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    try {
+      history.replaceState(null, "", hash);
+    } catch {
+      // abaikan: navigasi tetap berjalan tanpa mengubah URL
+    }
   }, []);
 
-  // Activate/show sections on load with hash links (perilaku asli)
+  // Header menyusut jadi bar atas setelah hero terlewati
   useEffect(() => {
-    if (window.location.hash) {
-      const initial = document.querySelector(window.location.hash);
-      if (initial && window.location.hash !== "#header") {
-        showSection(window.location.hash);
+    const onScrollOrResize = () => {
+      const header = headerRef.current;
+      if (!header) return;
+      if (!header.classList.contains("header-top")) {
+        heroHRef.current = header.offsetHeight;
+        setHeroH(header.offsetHeight);
+      }
+      const threshold = Math.max(0, heroHRef.current - 96);
+      setTopBar(window.scrollY > threshold);
+    };
+    onScrollOrResize();
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
+    };
+  }, []);
+
+  // Scrollspy: link aktif mengikuti section yang sedang di tengah layar
+  useEffect(() => {
+    const targets = NAV_LINKS.map((l) => document.querySelector(l.hash)).filter(
+      (el): el is Element => !!el
+    );
+    if (!("IntersectionObserver" in window) || targets.length === 0) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    targets.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
+  // Buka langsung di section tujuan bila URL membawa hash
+  useEffect(() => {
+    if (window.location.hash && window.location.hash !== "#header") {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setActive(window.location.hash);
+        setTimeout(() => target.scrollIntoView(), 80);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <header id="header">
-      <div className="container">
-        <h1>
-          <a href="index.html" onClick={(e) => { e.preventDefault(); showSection("#header"); }}>
-            PT Zero One Teknologi
-          </a>
-        </h1>
-        <h2>
-          Mitra teknologi untuk <span>software, aplikasi, dan solusi digital</span> terpadu
-        </h2>
-        <p className="hero-motto" style={{ fontStyle: "italic", marginTop: "12px", letterSpacing: "0.04em" }}>
-          &ldquo;don&apos;t limit yourself&rdquo;
-        </p>
+    <>
+      {topBar && <div aria-hidden="true" style={{ height: heroH }} />}
+      <header id="header" ref={headerRef} className={topBar ? "header-top" : undefined}>
+        <div className="container">
+          <h1>
+            <a href="index.html" onClick={(e) => { e.preventDefault(); goTo("#header"); }}>
+              PT Zero One Teknologi
+            </a>
+          </h1>
+          <h2>
+            Mitra teknologi untuk <span>software, aplikasi, dan solusi digital</span> terpadu
+          </h2>
+          <p className="hero-motto" style={{ fontStyle: "italic", marginTop: "12px", letterSpacing: "0.04em" }}>
+            &ldquo;don&apos;t limit yourself&rdquo;
+          </p>
 
-        <nav id="navbar" className="navbar">
-          <ul>
-            {NAV_LINKS.map((link) => (
-              <li key={link.hash}>
-                <a
-                  className={`nav-link${active === link.hash ? " active" : ""}`}
-                  href={link.hash}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    showSection(link.hash);
-                  }}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <nav id="navbar" className="navbar">
+            <ul>
+              {NAV_LINKS.map((link) => (
+                <li key={link.hash}>
+                  <a
+                    className={`nav-link${active === link.hash ? " active" : ""}`}
+                    href={link.hash}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      goTo(link.hash);
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label="Ganti tema terang/gelap">
-          <i className={`bi ${theme === "dark" ? "bi-sun" : "bi-moon"}`}></i>
-          <span className="theme-toggle-label">{theme === "dark" ? "Mode Terang" : "Mode Gelap"}</span>
-        </button>
+          <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label="Ganti tema terang/gelap">
+            <i className={`bi ${theme === "dark" ? "bi-sun" : "bi-moon"}`}></i>
+            <span className="theme-toggle-label">{theme === "dark" ? "Mode Terang" : "Mode Gelap"}</span>
+          </button>
 
-        <div className="social-links">
-          <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
-          <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
-          <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
-          <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
+          <div className="social-links">
+            <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
+            <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
+            <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
+            <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
+          </div>
         </div>
-      </div>
 
-      {/* Navigasi bawah khusus mobile (pengganti hamburger) */}
-      <nav className="mobile-bottom-nav" aria-label="Navigasi mobile">
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link.hash}
-            href={link.hash}
-            className={active === link.hash ? "active" : undefined}
-            onClick={(e) => {
-              e.preventDefault();
-              showSection(link.hash);
-            }}
-          >
-            <i className={`bi ${link.icon}`}></i>
-            <span>{link.label}</span>
-          </a>
-        ))}
-      </nav>
-    </header>
+        {/* Navigasi bawah khusus mobile (pengganti hamburger) */}
+        <nav className="mobile-bottom-nav" aria-label="Navigasi mobile">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.hash}
+              href={link.hash}
+              className={active === link.hash ? "active" : undefined}
+              onClick={(e) => {
+                e.preventDefault();
+                goTo(link.hash);
+              }}
+            >
+              <i className={`bi ${link.icon}`}></i>
+              <span>{link.label}</span>
+            </a>
+          ))}
+        </nav>
+      </header>
+    </>
   );
 }

@@ -35,6 +35,104 @@ disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18).
 - 2026-11-18: Nama proyek/repo disesuaikan dengan domain atas instruksi pemilik:
   `zeroone-nextjs` → **`zerooneteknologi`** (folder, package.json, dokumen, zip).
   Build + test ulang setelah rename: tetap 9/9 lulus.
+- 2026-11-18: Tagline hero digeneralisasi sesuai KBLI atas instruksi pemilik:
+  'Mitra teknologi untuk software, aplikasi, dan solusi digital terpadu' +
+  moto 'don't limit yourself' ditampilkan di hero. Build + test tetap 9/9.
+- 2026-11-18: Fix gambar testimoni lonjong (laporan screenshot pemilik): CSS
+  `.testimonial-img` kini `height: 90px; object-fit: cover` + atribut Image
+  90×90 (sebelumnya cuma `width: 90px`, tinggi mengikuti atribut 400 &
+  teregang di browser). Terverifikasi di CSS hasil build; menunggu konfirmasi
+  visual pemilik.
+- 2026-11-18: Atas instruksi pemilik dibuat 2 patch TANPA push (di `your_files/`):
+  `zerooneteknologi-testi-fix.patch` (globals.css + Testimonials.tsx) &
+  `zerooneteknologi-tagline-motto.patch` (Header.tsx), basis = keadaan zip
+  13:16 (sebelum dua perubahan itu). Terverifikasi: apply bersih di basis,
+  3 file hasil identik byte, build + test pohon ter-patch 9/9. Menunggu apply
+  oleh pemilik di laptop.
+- 2026-11-18: Fix dua cacat dari screenshot pemilik: (1) moto bocor ke bar
+  header-top → moto diberi class `hero-motto` + aturan `display:none` saat
+  header-top (CSS produksi terverifikasi memuatnya); (2) '+' counter jatuh
+  baris → PureCounter dapat prop `suffix` dirender di dalam span yang sama
+  ('99+'/'50+' sebaris). Build + test 9/9. Menunggu konfirmasi visual pemilik.
+- 2026-11-18: Atas instruksi pemilik dibuat patch TANPA commit:
+  `your_files/zerooneteknologi-header-counter-fix.patch` (4 file: Header,
+  globals.css, PureCounter, About), basis = keadaan salinan laptop saat ini
+  (patch testi + tagline sudah terpasang). Terverifikasi: apply bersih,
+  file identik byte, build + test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: Toggle tema terang/gelap DIBANGUN atas instruksi pemilik:
+  tombol `.theme-toggle` di header (tetap tampil saat header-top), pilihan
+  tersimpan di localStorage `zo-theme`, script inline anti-kedip di layout,
+  override terang terpusat di akhir globals.css (75 aturan `data-theme=light`;
+  token tercatat di docs/design-tokens.md). Build + test 9/9; HTML & CSS
+  produksi terverifikasi memuat tombol + aturan terang. Menunggu konfirmasi
+  visual pemilik; belum di-patch ke laptop.
+- 2026-11-18: Patch toggle tema versi pertama GAGAL apply di laptop:
+  basis rekonstruksi beda di ujung file (globals.css laptop tanpa newline
+  penutup; design-tokens.md beda 1 baris kosong) — hunk penutup file sensitif
+  soal itu. Patch DIBANGUN ULANG di atas file ASLI laptop yang diupload
+  pemilik (basis persis): `your_files/zerooneteknologi-theme-toggle.patch`
+  (layout.tsx, Header.tsx, globals.css, docs/design-tokens.md).
+  Terverifikasi ulang: apply bersih, 4 file identik byte, build + test 9/9.
+  Menunggu apply pemilik. Pelajaran: blok apply wajib dirantai `&&` agar
+  `rm` tidak jalan saat apply gagal.
+- 2026-11-18: Navigasi mobile DIBANGUN ulang atas instruksi pemilik:
+  hamburger + overlay dibuang, diganti nav bawah fixed (6 tautan + ikon,
+  hanya ≤991px); tombol tema di mobile jadi ikon fixed pojok kanan atas
+  (bekas posisi hamburger), di desktop tetap pill berlabel. Credits naik
+  58px & padding section ditambah agar tak tertutup nav bawah. Build +
+  test 9/9, HTML produksi terverifikasi. Belum di-patch ke laptop.
+- 2026-11-18: Patch nav mobile versi pertama GAGAL di Header.tsx:130 —
+  rekonstruksi invers Header beda dari file laptop asli di daerah ujung
+  file yang tak tersentuh patch toggle. Patch DIBANGUN ULANG di atas
+  Header.tsx ASLI yang diupload pemilik (+ globals dari file asli + patch
+  toggle): `your_files/zerooneteknologi-mobile-nav.patch`. Terverifikasi:
+  apply bersih, 2 file identik byte, build + test pohon ter-patch 9/9.
+  Menunggu apply pemilik. Pelajaran: untuk file yang sering berubah,
+  basis patch = file asli tujuan, bukan rekonstruksi.
+- 2026-11-18: REPO RESMI + DEPLOY: pemilik commit baseline di laptop &
+  push ke GitHub `syamsulsariphidayat7/zerooneteknologi` — main = `f21f606`
+  (di atas `eb93a88` fix testi/tagline/header/counter dan `d937e99` commit
+  pertama), terverifikasi dari VM via ls-remote. Situs LIVE via Vercel di
+  https://zerooneteknologi.web.id (200, HTML memuat toggle + nav bawah).
+  Cermin remote untuk basis patch tersimpan di
+  `~/workspace/zerooneteknologi-remote/`. PROSEDUR BARU: patch selalu
+  dibangun di atas commit remote terakhir (fetch dulu), bukan rekonstruksi.
+  Selisih pohon VM vs remote kini hanya PROGRESS.md + docs/pt-content.md
+  (catatan VM lebih lengkap) dan next-env.d.ts (hasil generate).
+- 2026-11-18: Kotak section scroll internal + bar progres scroll DIBANGUN
+  atas instruksi pemilik: `.section-show .container` max-height + overflow
+  auto (scrollbar tipis), komponen `ScrollProgress` (bar gradien 3px di
+  tepi atas; sumber = scroll kotak, fallback scroll jendela). Patch dibuat
+  dari cermin remote basis `f21f606` (prosedur baru):
+  `your_files/zerooneteknologi-scroll-progress.patch`, terverifikasi apply
+  bersih + identik + build/test pohon ter-patch 9/9. Menunggu apply pemilik.
+- 2026-11-18: KOREKSI MODEL SCROLL atas klarifikasi Syamsul: tafsir "kotak
+  section scroll internal" SALAH — yang dimaksud SATU HALAMAN PANJANG:
+  semua section menumpuk, scroll halaman biasa, efek muncul tiap section
+  DIPERTAHANKAN sebagai reveal-on-scroll. Dibangun ulang: CSS scroll
+  internal dibuang, section jadi relatif bertumpuk, komponen baru
+  RevealOnScroll, Header: navigasi scroll halus + scrollspy + header-top
+  muncul setelah hero (dengan spacer anti-lompat), ScrollProgress kini
+  membaca scroll jendela. Keputusan dicatat di docs/adr/0003. Patch
+  koreksi: `your_files/zerooneteknologi-longpage.patch`, basis = keadaan
+  laptop sesudah scroll-docs + wa-seo ter-apply (belum commit).
+- 2026-11-18: Rekomendasi 1-3 disetujui Syamsul & DIBANGUN: (1) tombol
+  WhatsApp mengambang (wa.me nomor resmi situs + teks sapa) — komponen
+  WhatsAppFloat; (2) tombol "Unduh Profil Perusahaan (PDF)" di Tentang —
+  PDF profil asli di public/profil-pt-zero-one-teknologi.pdf (480 KB);
+  (3) paket SEO: og-image.png 1200x630 + metadata OpenGraph/Twitter,
+  app/sitemap.ts, app/robots.ts, JSON-LD ProfessionalService (alamat NIB,
+  telepon, email) di layout. Build + 9/9; output produksi terverifikasi
+  (wa.me, JSON-LD, og, sitemap/robots/pdf/og-image 200). Patch:
+  `your_files/zerooneteknologi-wa-seo.patch` — basis = keadaan SETELAH
+  patch scroll-docs ter-apply (urutan: scroll-docs dulu, baru ini).
+- 2026-11-18: Audit docs vs kode: api.md, versions.md, pt-content.md,
+  design-tokens.md sinkron; yang basi DIPERBARUI — AGENTS.md (fase jadi
+  Maintenance + status repo live), README.md (struktur + ScrollProgress),
+  judul versions.md. Patch scroll DIGABUNG dengan sinkronisasi docs ini
+  (termasuk PROGRESS.md & pt-content.md disamakan ke versi VM):
+  `your_files/zerooneteknologi-scroll-docs.patch`, basis remote `f21f606`.
+  Patch scroll terpisah sebelumnya DICABUT (digantikan patch gabungan).
 - 2026-11-18: Smoke test disesuaikan (konten PT) — `pnpm build` sukses,
   `pnpm test` **9 lulus, 0 gagal**; cek manual server produksi: semua string kunci
   PT tampil, logo & favicon 200, tidak ada sisa "Emily Jones".

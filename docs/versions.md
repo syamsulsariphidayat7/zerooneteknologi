@@ -1,6 +1,7 @@
-# Versi Library — personal-nextjs
+# Versi Library — zerooneteknologi
 
-Versi yang terpasang dan terverifikasi build pada 2026-11-15.
+Versi yang terpasang dan terverifikasi build pada 2026-11-15
+(diaudit ulang 2026-11-18: angka di tabel ini cocok dengan `pnpm-lock.yaml`).
 Angka persisnya dikunci di `pnpm-lock.yaml`; dokumen ini ringkasan kompatibilitasnya.
 
 | Package | Versi | Catatan |

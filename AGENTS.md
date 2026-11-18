@@ -29,8 +29,9 @@ Sumber & keputusan konten: `docs/pt-content.md`. Brief asal: `docs/project-brief
 ## Fase Standar
 
 Discovery → Design → Setup → Development → Integration & Testing → Deployment → Maintenance.
-Fase aktif saat ini: **Integration & Testing** (lihat `PROGRESS.md`).
-Deployment belum dilakukan; eksekusi deploy dari laptop pemilik, bukan dari VM.
+Fase aktif saat ini: **Maintenance** (lihat `PROGRESS.md`).
+Situs SUDAH live via Vercel (https://zerooneteknologi.web.id, sejak 2026-11-18);
+deploy terpicu oleh push ke GitHub dari laptop pemilik, bukan dari VM.
 
 ## Dokumentasi (tidak duplikat)
 
@@ -53,7 +54,10 @@ Deployment belum dilakukan; eksekusi deploy dari laptop pemilik, bukan dari VM.
 
 - Commit utama: `feat`. Fix kecil boleh gabung commit fitur terkait; fix signifikan berdiri sendiri.
 - Commit dan push **tidak otomatis** — wajib izin pemilik dulu.
-- Status: disiapkan untuk push pertama oleh pemilik dari laptop (2026-11-18); di VM tidak ada commit.
+- Status: repo GitHub `syamsulsariphidayat7/zerooneteknologi` aktif (main terverifikasi
+  dari VM); push hanya dari laptop pemilik. Patch dari VM selalu dibangun di atas
+  commit remote terakhir — cermin lokal di `~/workspace/zerooneteknologi-remote/` —
+  bukan dari rekonstruksi keadaan laptop.
 
 ## Seed Data
 

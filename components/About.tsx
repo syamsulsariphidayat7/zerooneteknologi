@@ -73,6 +73,11 @@ export default function About() {
               transparan, efektif, dan efisien; meningkatkan kemampuan Iptek dan inovasi sebagai pendamping kemajuan
               desa; serta memberikan layanan internet desa untuk meningkatkan efektivitas dan efisiensi pelayanan desa.
             </p>
+            <p style={{ marginTop: "20px" }}>
+              <a className="pdf-download-btn" href="/profil-pt-zero-one-teknologi.pdf" download>
+                <i className="bi bi-file-earmark-pdf"></i> Unduh Profil Perusahaan (PDF)
+              </a>
+            </p>
           </div>
         </div>
       </div>

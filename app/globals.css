@@ -1586,8 +1586,8 @@ html[data-theme="light"] .credits a:hover {
     bottom: 58px;
   }
 
-  /* Ruang ekstra di ujung section agar konten terakhir tidak tertutup nav bawah */
-  section.section-show {
+  /* Ruang ekstra di ujung halaman agar konten terakhir tidak tertutup nav bawah */
+  section:last-of-type {
     padding-bottom: 110px;
   }
 }
@@ -1603,4 +1603,119 @@ html[data-theme="light"] .mobile-bottom-nav a {
 
 html[data-theme="light"] .mobile-bottom-nav a.active {
   color: #0e9f5d;
+}
+
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9998;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #18d26e, #35e888);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/*--------------------------------------------------------------
+# Tombol WhatsApp Mengambang + Tombol Unduh PDF Profil
+--------------------------------------------------------------*/
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 70px;
+  z-index: 997;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  color: #fff;
+  transform: scale(1.08);
+}
+
+@media (max-width: 991px) {
+  .whatsapp-float {
+    right: 14px;
+    bottom: 106px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+
+.pdf-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #18d26e;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.pdf-download-btn:hover {
+  background: #15bb62;
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Mode Satu Halaman Panjang + Efek Muncul per Section
+# Semua section menumpuk dan halaman di-scroll seperti web biasa
+# (menggantikan model tampil-satu-section ala template asli).
+# Efek muncul: section.reveal tersembunyi, lalu .is-visible saat
+# masuk viewport (diatur komponen RevealOnScroll).
+--------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  opacity: 1;
+  overflow: visible;
+  padding: 64px 0 8px;
+  scroll-margin-top: 84px;
+}
+
+section.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+section.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  section.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
